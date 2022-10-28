@@ -32,7 +32,8 @@
         "CHANGELOG": "dist/changelog.md",
         "BUMPFILE": "dist/version.txt",
         "RELEASETAG": "dist/releasetag.txt",
-        "RELEASE_TAG_PREFIX": ""
+        "RELEASE_TAG_PREFIX": "",
+        "VERSIONRCOPTIONS": "{\"types\":[{\"type\":\"chore\",\"section\":\"Chore\",\"hidden\":false}]}"
       },
       "steps": [
         {
@@ -40,6 +41,33 @@
         }
       ],
       "condition": "! git log --oneline -1 | grep -q \"chore(release):\""
+    },
+    "bundle": {
+      "name": "bundle",
+      "description": "Prepare assets",
+      "steps": [
+        {
+          "spawn": "bundle:custom-resource-provider/handler.lambda"
+        }
+      ]
+    },
+    "bundle:custom-resource-provider/handler.lambda": {
+      "name": "bundle:custom-resource-provider/handler.lambda",
+      "description": "Create a JavaScript bundle from src/custom-resource-provider/handler.lambda.ts",
+      "steps": [
+        {
+          "exec": "esbuild --bundle src/custom-resource-provider/handler.lambda.ts --target=\"node14\" --platform=\"node\" --outfile=\"assets/custom-resource-provider/handler.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:aws-sdk"
+        }
+      ]
+    },
+    "bundle:custom-resource-provider/handler.lambda:watch": {
+      "name": "bundle:custom-resource-provider/handler.lambda:watch",
+      "description": "Continuously update the JavaScript bundle from src/custom-resource-provider/handler.lambda.ts",
+      "steps": [
+        {
+          "exec": "esbuild --bundle src/custom-resource-provider/handler.lambda.ts --target=\"node14\" --platform=\"node\" --outfile=\"assets/custom-resource-provider/handler.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:aws-sdk --watch"
+        }
+      ]
     },
     "clobber": {
       "name": "clobber",
@@ -154,6 +182,33 @@
       "steps": [
         {
           "spawn": "package:js"
+        },
+        {
+          "spawn": "package:java"
+        },
+        {
+          "spawn": "package:python"
+        },
+        {
+          "spawn": "package:dotnet"
+        }
+      ]
+    },
+    "package:dotnet": {
+      "name": "package:dotnet",
+      "description": "Create dotnet language bindings",
+      "steps": [
+        {
+          "exec": "jsii-pacmak -v --target dotnet"
+        }
+      ]
+    },
+    "package:java": {
+      "name": "package:java",
+      "description": "Create java language bindings",
+      "steps": [
+        {
+          "exec": "jsii-pacmak -v --target java"
         }
       ]
     },
@@ -163,6 +218,15 @@
       "steps": [
         {
           "exec": "jsii-pacmak -v --target js"
+        }
+      ]
+    },
+    "package:python": {
+      "name": "package:python",
+      "description": "Create python language bindings",
+      "steps": [
+        {
+          "exec": "jsii-pacmak -v --target python"
         }
       ]
     },
@@ -177,7 +241,12 @@
     },
     "pre-compile": {
       "name": "pre-compile",
-      "description": "Prepare the project for compilation"
+      "description": "Prepare the project for compilation",
+      "steps": [
+        {
+          "spawn": "bundle"
+        }
+      ]
     },
     "release": {
       "name": "release",
@@ -232,7 +301,8 @@
         "CHANGELOG": "dist/changelog.md",
         "BUMPFILE": "dist/version.txt",
         "RELEASETAG": "dist/releasetag.txt",
-        "RELEASE_TAG_PREFIX": ""
+        "RELEASE_TAG_PREFIX": "",
+        "VERSIONRCOPTIONS": "{\"types\":[{\"type\":\"chore\",\"section\":\"Chore\",\"hidden\":false}]}"
       },
       "steps": [
         {

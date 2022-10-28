@@ -1,16 +1,80 @@
 import { AwsCdkConstructLibrary } from "@pepperize/projen-awscdk-construct";
+import { javascript } from "projen";
 const project = new AwsCdkConstructLibrary({
   author: "Patrick Florek",
   authorAddress: "patrick.florek@gmail.com",
-  cdkVersion: "2.1.0",
+  cdkVersion: "2.48.0",
   defaultReleaseBranch: "main",
-  devDeps: ["@pepperize/projen-awscdk-construct@latest"],
   name: "cdk-github",
-  projenrcTs: true,
-  repositoryUrl: "https://github.com/patrick.florek/cdk-github.git",
+  description:
+    "Manage GitHub resources like repositories, teams, members, integrations and workflows with the AWS CDK as Custom Resources in CloudFormation with [cdk-github](https://github.com/pepperize/cdk-github).",
+  keywords: [
+    "aws",
+    "cdk",
+    "construct",
+    "custom-resource",
+    "github",
+    "provider",
+    "repository",
+    "teams",
+    "user",
+    "octokit",
+    "rest",
+    "github app",
+    "Utilities",
+  ],
+  repositoryUrl: "https://github.com/pepperize/cdk-github.git",
 
-  // deps: [],                /* Runtime dependencies of this module. */
-  // description: undefined,  /* The description is just a string that helps people understand the purpose of the package. */
-  // packageName: undefined,  /* The "name" in package.json. */
+  projenrcTs: true,
+
+  devDeps: [
+    "@aws-sdk/util-arn-parser",
+    "@octokit/auth-app",
+    "@octokit/auth-token",
+    "@octokit/auth-unauthenticated",
+    "@octokit/core",
+    "@octokit/rest",
+    "@octokit/request-error",
+    "@octokit/types",
+    "@pepperize/projen-awscdk-construct@latest",
+    "@types/aws-lambda",
+    "aws-lambda",
+    "aws-sdk",
+  ],
+
+  versionrcOptions: {
+    types: [{ type: "chore", section: "Chore", hidden: false }],
+  },
+
+  releaseToNpm: true,
+  npmAccess: javascript.NpmAccess.PUBLIC,
+  packageName: "@pepperize/cdk-github",
+  publishToNuget: {
+    dotNetNamespace: "Pepperize.CDK",
+    packageId: "Pepperize.CDK.Github",
+  },
+  publishToPypi: {
+    distName: "pepperize.cdk-github",
+    module: "pepperize_cdk_github",
+  },
+  publishToMaven: {
+    mavenEndpoint: "https://s01.oss.sonatype.org",
+    mavenGroupId: "com.pepperize",
+    mavenArtifactId: "cdk-github",
+    javaPackage: "com.pepperize.cdk.github",
+  },
+
+  gitpod: true,
+
+  gitignore: ["cdk.out"],
 });
+
+project.gitpod?.addCustomTask({
+  name: "setup",
+  init: "yarn install && npx projen build",
+  command: "npx projen watch",
+});
+
+project.gitpod?.addVscodeExtensions("dbaeumer.vscode-eslint");
+
 project.synth();

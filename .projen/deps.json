@@ -1,8 +1,44 @@
 {
   "dependencies": [
     {
+      "name": "@aws-sdk/util-arn-parser",
+      "type": "build"
+    },
+    {
+      "name": "@octokit/auth-app",
+      "type": "build"
+    },
+    {
+      "name": "@octokit/auth-token",
+      "type": "build"
+    },
+    {
+      "name": "@octokit/auth-unauthenticated",
+      "type": "build"
+    },
+    {
+      "name": "@octokit/core",
+      "type": "build"
+    },
+    {
+      "name": "@octokit/request-error",
+      "type": "build"
+    },
+    {
+      "name": "@octokit/rest",
+      "type": "build"
+    },
+    {
+      "name": "@octokit/types",
+      "type": "build"
+    },
+    {
       "name": "@pepperize/projen-awscdk-construct",
       "version": "latest",
+      "type": "build"
+    },
+    {
+      "name": "@types/aws-lambda",
       "type": "build"
     },
     {
@@ -27,12 +63,24 @@
     },
     {
       "name": "aws-cdk-lib",
-      "version": "2.1.0",
+      "version": "2.48.0",
+      "type": "build"
+    },
+    {
+      "name": "aws-lambda",
+      "type": "build"
+    },
+    {
+      "name": "aws-sdk",
       "type": "build"
     },
     {
       "name": "constructs",
       "version": "10.0.5",
+      "type": "build"
+    },
+    {
+      "name": "esbuild",
       "type": "build"
     },
     {
@@ -134,7 +182,7 @@
     },
     {
       "name": "aws-cdk-lib",
-      "version": "^2.1.0",
+      "version": "^2.48.0",
       "type": "peer"
     },
     {

@@ -60,7 +60,8 @@
           "**/build-tools/**",
           "**/projenrc/**",
           ".projenrc.ts",
-          "projenrc/**/*.ts"
+          "projenrc/**/*.ts",
+          "src/custom-resource-provider/handler.lambda.ts"
         ],
         "optionalDependencies": false,
         "peerDependencies": true

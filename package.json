@@ -1,12 +1,16 @@
 {
-  "name": "cdk-github",
+  "name": "@pepperize/cdk-github",
+  "description": "Manage GitHub resources like repositories, teams, members, integrations and workflows with the AWS CDK as Custom Resources in CloudFormation with [cdk-github](https://github.com/pepperize/cdk-github).",
   "repository": {
     "type": "git",
-    "url": "https://github.com/patrick.florek/cdk-github.git"
+    "url": "https://github.com/pepperize/cdk-github.git"
   },
   "scripts": {
     "build": "npx projen build",
     "bump": "npx projen bump",
+    "bundle": "npx projen bundle",
+    "bundle:custom-resource-provider/handler.lambda": "npx projen bundle:custom-resource-provider/handler.lambda",
+    "bundle:custom-resource-provider/handler.lambda:watch": "npx projen bundle:custom-resource-provider/handler.lambda:watch",
     "clobber": "npx projen clobber",
     "compat": "npx projen compat",
     "compile": "npx projen compile",
@@ -17,7 +21,10 @@
     "format": "npx projen format",
     "package": "npx projen package",
     "package-all": "npx projen package-all",
+    "package:dotnet": "npx projen package:dotnet",
+    "package:java": "npx projen package:java",
     "package:js": "npx projen package:js",
+    "package:python": "npx projen package:python",
     "post-compile": "npx projen post-compile",
     "pre-compile": "npx projen pre-compile",
     "release": "npx projen release",
@@ -33,13 +40,25 @@
     "organization": true
   },
   "devDependencies": {
+    "@aws-sdk/util-arn-parser": "^3.188.0",
+    "@octokit/auth-app": "^4.0.7",
+    "@octokit/auth-token": "^3.0.2",
+    "@octokit/auth-unauthenticated": "^3.0.3",
+    "@octokit/core": "^4.1.0",
+    "@octokit/request-error": "^3.0.2",
+    "@octokit/rest": "^19.0.5",
+    "@octokit/types": "^8.0.0",
     "@pepperize/projen-awscdk-construct": "latest",
+    "@types/aws-lambda": "^8.10.108",
     "@types/jest": "^27",
     "@types/node": "^14",
     "@typescript-eslint/eslint-plugin": "^5",
     "@typescript-eslint/parser": "^5",
-    "aws-cdk-lib": "2.1.0",
+    "aws-cdk-lib": "2.48.0",
+    "aws-lambda": "^1.0.7",
+    "aws-sdk": "^2.1242.0",
     "constructs": "10.0.5",
+    "esbuild": "^0.15.12",
     "eslint": "^8",
     "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-node": "^0.3.6",
@@ -61,14 +80,29 @@
     "typescript": "^4.8.4"
   },
   "peerDependencies": {
-    "aws-cdk-lib": "^2.1.0",
+    "aws-cdk-lib": "^2.48.0",
     "constructs": "^10.0.5"
   },
   "keywords": [
-    "cdk"
+    "Utilities",
+    "aws",
+    "cdk",
+    "construct",
+    "custom-resource",
+    "github",
+    "github app",
+    "octokit",
+    "provider",
+    "repository",
+    "rest",
+    "teams",
+    "user"
   ],
   "main": "lib/index.js",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "version": "0.0.0",
   "jest": {
     "testMatch": [
@@ -114,7 +148,23 @@
   "stability": "stable",
   "jsii": {
     "outdir": "dist",
-    "targets": {},
+    "targets": {
+      "java": {
+        "package": "com.pepperize.cdk.github",
+        "maven": {
+          "groupId": "com.pepperize",
+          "artifactId": "cdk-github"
+        }
+      },
+      "python": {
+        "distName": "pepperize.cdk-github",
+        "module": "pepperize_cdk_github"
+      },
+      "dotnet": {
+        "namespace": "Pepperize.CDK",
+        "packageId": "Pepperize.CDK.Github"
+      }
+    },
     "tsc": {
       "outDir": "lib",
       "rootDir": "src"

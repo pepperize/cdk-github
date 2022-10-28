@@ -4,6 +4,7 @@
 !/.projen/deps.json
 !/.projen/files.json
 !/.github/workflows/pull-request-lint.yml
+!/.gitpod.yml
 !/.github/workflows/auto-approve.yml
 !/package.json
 !/LICENSE
@@ -31,6 +32,7 @@ jspm_packages/
 *.tgz
 .yarn-integrity
 .cache
+cdk.out
 !/.projenrc.js
 /test-reports/
 junit.xml
@@ -53,6 +55,8 @@ junit.xml
 .jsii
 tsconfig.json
 !/API.md
+/assets/
+!/src/custom-resource-provider/handler-function.ts
 .idea/
 *.iml
 .vscode/
