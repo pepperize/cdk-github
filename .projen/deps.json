@@ -47,6 +47,10 @@
       "type": "build"
     },
     {
+      "name": "@types/libsodium-wrappers",
+      "type": "build"
+    },
+    {
       "name": "@types/node",
       "version": "^14",
       "type": "build"
@@ -136,6 +140,14 @@
     },
     {
       "name": "json-schema",
+      "type": "build"
+    },
+    {
+      "name": "libsodium",
+      "type": "build"
+    },
+    {
+      "name": "libsodium-wrappers",
       "type": "build"
     },
     {
