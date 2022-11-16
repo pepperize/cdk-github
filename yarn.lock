@@ -838,11 +838,11 @@
   integrity sha512-T8TbSnGsxo6TDBJx/Sgv/BlVJL3tshxZP7Aq5R1mSnM5OcHY2dQaxLMu2+E8u3gN0MLOzdjurqN4ZRVuzQycOQ==
 
 "@pepperize/projen-awscdk-construct@latest":
-  version "0.0.302"
-  resolved "https://registry.yarnpkg.com/@pepperize/projen-awscdk-construct/-/projen-awscdk-construct-0.0.302.tgz#73fe462f219cb58b623b6d35d33e4d482775cd85"
-  integrity sha512-PDhJ5xR2tS7bYo510a9YHEI2EebIoA5L298bebNK+T9RUpbuWEfJM/bYdn2FKcBTCDApfmoa1N41GtqGN9DfVw==
+  version "0.0.310"
+  resolved "https://registry.yarnpkg.com/@pepperize/projen-awscdk-construct/-/projen-awscdk-construct-0.0.310.tgz#27bdb44c678ded2c130bee456c13fc7cb837479e"
+  integrity sha512-mrx8qVEmwZgvVmS7ELZKxbB7r+QpNBfzkYeKjVmumrFvM5SQRKfYJetMenQMSmTl2W51ht8vQOPo7tkoHBSrjg==
   dependencies:
-    projen "^0.63.14"
+    projen "^0.65.25"
 
 "@pkgr/utils@^2.3.1":
   version "2.3.1"
@@ -4867,10 +4867,10 @@ process-nextick-args@~2.0.0:
   resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-2.0.1.tgz#7820d9b16120cc55ca9ae7792680ae7dba6d7fe2"
   integrity sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==
 
-projen@^0.63.14:
-  version "0.63.34"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.63.34.tgz#2221c0a75bc2ecaaaf0abdf278c71c42244e8ec4"
-  integrity sha512-kaJRLS+xiMH8CD6Gh+Wczgpm3Z6zgc2kfdARPJudRQur/MWgvw4YXxffLmDejrkQhZ3B7jbJ4CVa3aLMfBLD8A==
+projen@^0.64.1:
+  version "0.64.1"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.64.1.tgz#6148aee0657c31f97e884a781e9c0f7c565abc69"
+  integrity sha512-fiAX1QwOcJlGdvXtzrx6ZMUKUAOf2/QleL+FsZCfJB20K2JO/q+3P0QGLW9spcHbJQ3xRqw35Wjr7JTVZaL8DA==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"
@@ -4887,10 +4887,10 @@ projen@^0.63.14:
     yargs "^16.2.0"
     zlib "^1.0.5"
 
-projen@^0.64.1:
-  version "0.64.1"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.64.1.tgz#6148aee0657c31f97e884a781e9c0f7c565abc69"
-  integrity sha512-fiAX1QwOcJlGdvXtzrx6ZMUKUAOf2/QleL+FsZCfJB20K2JO/q+3P0QGLW9spcHbJQ3xRqw35Wjr7JTVZaL8DA==
+projen@^0.65.25:
+  version "0.65.25"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.65.25.tgz#eedca3255ddda1f35f07bf10e61ba3dcbfe646e2"
+  integrity sha512-i2hgNpvntLyX80awrgili6zherTCDXtDTcK8ctpcIU9/uMEWeBEaPxBpyP8znyfNAiDuC+16edtL12GrA1rqQA==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"
