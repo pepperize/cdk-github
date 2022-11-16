@@ -38,8 +38,11 @@ const project = new AwsCdkConstructLibrary({
     "@octokit/types",
     "@pepperize/projen-awscdk-construct@latest",
     "@types/aws-lambda",
+    "@types/libsodium-wrappers",
     "aws-lambda",
     "aws-sdk",
+    "libsodium",
+    "libsodium-wrappers",
   ],
 
   versionrcOptions: {
@@ -68,6 +71,8 @@ const project = new AwsCdkConstructLibrary({
 
   gitignore: ["cdk.out"],
 });
+
+project.eslint?.allowDevDeps("src/custom-resource-provider/encrypt.ts");
 
 project.gitpod?.addCustomTask({
   name: "setup",

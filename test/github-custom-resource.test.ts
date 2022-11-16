@@ -2,8 +2,8 @@ import { App, Stack } from "aws-cdk-lib";
 import { Match, Template } from "aws-cdk-lib/assertions";
 import { Secret } from "aws-cdk-lib/aws-secretsmanager";
 import { Construct } from "constructs";
-import { AuthOptions } from "../src/auth";
-import { GithubCustomResource } from "../src/github-custom-resource";
+import { AuthOptions } from "../src";
+import { GithubCustomResource } from "../src";
 
 describe("GithubCustomResource", () => {
   it("Should match snapshot", () => {

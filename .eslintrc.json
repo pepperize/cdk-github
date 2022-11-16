@@ -61,7 +61,8 @@
           "**/projenrc/**",
           ".projenrc.ts",
           "projenrc/**/*.ts",
-          "src/custom-resource-provider/handler.lambda.ts"
+          "src/custom-resource-provider/handler.lambda.ts",
+          "src/custom-resource-provider/encrypt.ts"
         ],
         "optionalDependencies": false,
         "peerDependencies": true
