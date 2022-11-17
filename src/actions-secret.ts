@@ -21,8 +21,4 @@ export class ActionsSecret implements IResolvable {
   public resolve(_: IResolveContext): any {
     return { arn: this.secret.secretArn, field: this.field };
   }
-
-  public toString(): string {
-    throw new Error("test");
-  }
 }
