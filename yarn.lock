@@ -838,9 +838,9 @@
   integrity sha512-T8TbSnGsxo6TDBJx/Sgv/BlVJL3tshxZP7Aq5R1mSnM5OcHY2dQaxLMu2+E8u3gN0MLOzdjurqN4ZRVuzQycOQ==
 
 "@pepperize/projen-awscdk-construct@latest":
-  version "0.0.343"
-  resolved "https://registry.yarnpkg.com/@pepperize/projen-awscdk-construct/-/projen-awscdk-construct-0.0.343.tgz#b9b6e059ccdfc1fbfef1f628102789b976c39cc9"
-  integrity sha512-rMMz370lxSbi3sOfRj2WDC/KzdtWE92VsWS7qJO2R66IKavqbjGqHFZrwr7XFURaE+E5IfDAenD4n1iI7JTF2g==
+  version "0.0.344"
+  resolved "https://registry.yarnpkg.com/@pepperize/projen-awscdk-construct/-/projen-awscdk-construct-0.0.344.tgz#45f949ba0ac9f5f3e1460e39a7284a6895afc323"
+  integrity sha512-EfSooBF1cXetXq66SCmOnrS9U3qemghTaK/IKuXttzSPFBsSj3FPbgFyOS3vj/EBibJDjBt3L4v2+rHyE4uZhA==
   dependencies:
     projen "^0.65.25"
 
@@ -1353,9 +1353,9 @@ aws-lambda@^1.0.7:
     watchpack "^2.0.0-beta.10"
 
 aws-sdk@^2.1242.0, aws-sdk@^2.814.0:
-  version "2.1274.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1274.0.tgz#cfffb1243b5b5a713c37c4bf30a7373856e76a59"
-  integrity sha512-s6Dg2ymytzvwTeA5ZhPvw8KkWbPEBXF/B5wmJK0QfBZwDCW3xRsfvYGTJC0w2M2hYrZOzjPYICsOspcAK333Cg==
+  version "2.1275.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1275.0.tgz#70e4798a92ec68a9f8bd3add60119d88759e9c5a"
+  integrity sha512-GP7oS0BTh012pAMnNSVVQQrhfubeLH2moLUQQiuk9cPrqQYeP74BU3nnALM30CoFNzX+DwLanOeFU+KMfUGLHg==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
