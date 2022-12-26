@@ -838,9 +838,9 @@
   integrity sha512-T8TbSnGsxo6TDBJx/Sgv/BlVJL3tshxZP7Aq5R1mSnM5OcHY2dQaxLMu2+E8u3gN0MLOzdjurqN4ZRVuzQycOQ==
 
 "@pepperize/projen-awscdk-construct@latest":
-  version "0.0.355"
-  resolved "https://registry.yarnpkg.com/@pepperize/projen-awscdk-construct/-/projen-awscdk-construct-0.0.355.tgz#7fdd158eb611dd07fcc6d0f1cbb2d7ea18ae24ee"
-  integrity sha512-uxt3DDXCEeV0ATo3sCjQmFC8EQzPSaRMjNSS2y1DSHtxKDNV6RkCoEv5ns3dQxNJgR7nqRTYjUqH2nK86/PhUQ==
+  version "0.0.356"
+  resolved "https://registry.yarnpkg.com/@pepperize/projen-awscdk-construct/-/projen-awscdk-construct-0.0.356.tgz#c200ca5b412a89e6ce3604485ec853f2813ff353"
+  integrity sha512-3dzA4IsGWOzfnNIU6H85LbA2IH4xwfjxrAQNnvFrv8RTH+r+GFfyIZNslP3r35MnVyHQNKsyNVsJGIDYKAIsCQ==
   dependencies:
     projen "^0.65.25"
 
@@ -1018,9 +1018,9 @@
   integrity sha512-3JRwhbjI+cHLAkUorhf8RnqUbFXajvzX4q6fMn5JwkgtuwfYtRQYI3u4V92vI6NJuTsbBQWWh3RZjFsuevyMGQ==
 
 "@types/node@^14":
-  version "14.18.35"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.18.35.tgz#879c4659cb7b3fe515844f029c75079c941bb65c"
-  integrity sha512-2ATO8pfhG1kDvw4Lc4C0GXIMSQFFJBCo/R1fSgTwmUlq5oy95LXyjDQinsRVgQY6gp6ghh3H91wk9ES5/5C+Tw==
+  version "14.18.36"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.18.36.tgz#c414052cb9d43fab67d679d5f3c641be911f5835"
+  integrity sha512-FXKWbsJ6a1hIrRxv+FoukuHnGTgEzKYGi7kilfMae96AL9UNkPFNWJEEYWzdRI9ooIkbr4AKldyuSTLql06vLQ==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.1"
@@ -3845,9 +3845,9 @@ jsii-diff@^1.70.0:
     yargs "^16.2.0"
 
 jsii-docgen@^7.0.126:
-  version "7.0.183"
-  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-7.0.183.tgz#e40cf89054694354f951cbcf852726169ce42d17"
-  integrity sha512-ohuP2KMCaBDlFzc3vJmY7ADt2Y5Ht1VgzBhE+y0gIGx5LboXOPkPQN8F2r269FffmS70oTfO8mpudJTqSemunQ==
+  version "7.0.185"
+  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-7.0.185.tgz#52951ab4286e27c3fbedd3c63383f77904697c0b"
+  integrity sha512-hROi6mqLwnz1IHa8Qg+kVUnzaK0IoWMNpvyKsrumnGMnXePQ05HiazZMoZQk6LISngxWPGtcNR8eXlEQB8+NuQ==
   dependencies:
     "@jsii/spec" "^1.72.0"
     case "^1.6.3"
