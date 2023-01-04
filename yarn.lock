@@ -853,9 +853,9 @@
   integrity sha512-T8TbSnGsxo6TDBJx/Sgv/BlVJL3tshxZP7Aq5R1mSnM5OcHY2dQaxLMu2+E8u3gN0MLOzdjurqN4ZRVuzQycOQ==
 
 "@pepperize/projen-awscdk-construct@latest":
-  version "0.0.369"
-  resolved "https://registry.yarnpkg.com/@pepperize/projen-awscdk-construct/-/projen-awscdk-construct-0.0.369.tgz#bf78a99127adb5687dd2ec97d55d1529a13e4fa6"
-  integrity sha512-hLXaKhgE/7v3MSYQD812A4ao38eKovxQlEU4o46+mh8XOkGxry0fF7EenDs35/zEbB8DdIp08H11xq+G+I+dtQ==
+  version "0.0.370"
+  resolved "https://registry.yarnpkg.com/@pepperize/projen-awscdk-construct/-/projen-awscdk-construct-0.0.370.tgz#1bba42fc0adc2b27543eab537d4a46f76614676c"
+  integrity sha512-rcxL6SMUVAb7GhpxzFpVeFkECONpcXGMvFwyI+CGJzCJRARJ6aEnrLtX5WfDK2OhLZh7no1N+/PgkP8v2axldw==
   dependencies:
     projen "^0.65.25"
 
@@ -1402,9 +1402,9 @@ aws-lambda@^1.0.7:
     watchpack "^2.0.0-beta.10"
 
 aws-sdk@^2.1242.0, aws-sdk@^2.814.0:
-  version "2.1287.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1287.0.tgz#40296aadf34e7550e058f73f3363130d65ffb1c0"
-  integrity sha512-mtfDstUdFNn8FnBaXs2KAaQ0cgDIiwlqwC2UptUKWWrugjZHAoRacfD/6bnah1Kwhu43F9CDEe5QLHnQtymNkw==
+  version "2.1288.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1288.0.tgz#7c5d90f0c3c942406f204aa72eb75fe715b52ebf"
+  integrity sha512-5ALCke6yp+QP5VEnotLw7tF3ipII2+j7+ZjJg7s5OFgqJ9p0XNOBb6V+0teOTpbQarkfefwOLHj5oir3i6OMsA==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
@@ -3956,13 +3956,32 @@ jsii-rosetta@^1.72.0:
     workerpool "^6.3.1"
     yargs "^16.2.0"
 
-jsii@1.72.0, jsii@^1.70.0:
+jsii@1.72.0:
   version "1.72.0"
   resolved "https://registry.yarnpkg.com/jsii/-/jsii-1.72.0.tgz#fbed64c9cec3461a47dc9bc16a97df9fae82694a"
   integrity sha512-dwMHlO5SXuwAhchGg8emAuKjQRKGEiuR+GV5SxdhzhylxbPUexSBnsxGYqVIHaXwmXBIH3cOfoiqilQ5Xm2pMg==
   dependencies:
     "@jsii/check-node" "1.72.0"
     "@jsii/spec" "^1.72.0"
+    case "^1.6.3"
+    chalk "^4"
+    fast-deep-equal "^3.1.3"
+    fs-extra "^10.1.0"
+    log4js "^6.7.1"
+    semver "^7.3.8"
+    semver-intersect "^1.4.0"
+    sort-json "^2.0.1"
+    spdx-license-list "^6.6.0"
+    typescript "~3.9.10"
+    yargs "^16.2.0"
+
+jsii@^1.70.0:
+  version "1.73.0"
+  resolved "https://registry.yarnpkg.com/jsii/-/jsii-1.73.0.tgz#b341845061f145a550a8052ecc7769b1c9ed8d95"
+  integrity sha512-6GLXJv+XDPNPw4JRAMr6NicWgLorFcKmAZB6x+gqCnrkA6FqZlgDPohFdcqAkxE5Px9K3oAFIsnEH/xV3HuGrg==
+  dependencies:
+    "@jsii/check-node" "1.73.0"
+    "@jsii/spec" "^1.73.0"
     case "^1.6.3"
     chalk "^4"
     fast-deep-equal "^3.1.3"
