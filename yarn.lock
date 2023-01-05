@@ -604,7 +604,7 @@
     chalk "^4.1.2"
     semver "^7.3.8"
 
-"@jsii/spec@1.73.0", "@jsii/spec@^1.72.0", "@jsii/spec@^1.73.0":
+"@jsii/spec@1.73.0", "@jsii/spec@^1.73.0":
   version "1.73.0"
   resolved "https://registry.yarnpkg.com/@jsii/spec/-/spec-1.73.0.tgz#7ab1d42947b4cb4099f084119657c39409bc7dc8"
   integrity sha512-h0BeA6WQfxvYl5BaacmlvB5bAIdhlgf9SInJljxtERn2eYN+VjgMyU/1iv0Ww4Lp71xMGL96bmfXpdlFgRQFEg==
@@ -3879,17 +3879,17 @@ jsii-diff@^1.70.0:
     yargs "^16.2.0"
 
 jsii-docgen@^7.0.126:
-  version "7.0.193"
-  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-7.0.193.tgz#a021bf56665dc1db5f693ef4dbf8204b518dda51"
-  integrity sha512-MCdMWAjn6oQVERve+x0JE6/x4C5xbNj5MoPkkv+coBNlELLm0MuG6O8AlcvSEnObFQHvOjpOosakOO2CI+OlKA==
+  version "7.0.195"
+  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-7.0.195.tgz#7484073463ad1b6ccf8052f78808488d8a948afa"
+  integrity sha512-1q206p6pobLkN5voWATQ+jEkMvRRvpW+wiZJAgpt/2SlKvaqK5pFwL/swVBgk9kz8VoHqdolmmon6z1JrMz3hQ==
   dependencies:
-    "@jsii/spec" "^1.72.0"
+    "@jsii/spec" "^1.73.0"
     case "^1.6.3"
     fs-extra "^10.1.0"
     glob "^7.2.3"
     glob-promise "^3.4.0"
-    jsii-reflect "^1.72.0"
-    jsii-rosetta "^1.72.0"
+    jsii-reflect "^1.73.0"
+    jsii-rosetta "^1.73.0"
     semver "^7.3.8"
     yargs "^16.2.0"
 
@@ -3912,7 +3912,7 @@ jsii-pacmak@^1.70.0:
     xmlbuilder "^15.1.1"
     yargs "^16.2.0"
 
-jsii-reflect@^1.72.0, jsii-reflect@^1.73.0:
+jsii-reflect@^1.73.0:
   version "1.73.0"
   resolved "https://registry.yarnpkg.com/jsii-reflect/-/jsii-reflect-1.73.0.tgz#df6f57d6e8065aa836b6340465f08cfd7d388253"
   integrity sha512-RNnejItM5DUvTpMNBhL095Yt87a6mLWTse9rYZmR+XglJ8WdyNW8mmDftz8gq58TKr5mDVUtq5vpRApCEm0Viw==
@@ -3924,7 +3924,7 @@ jsii-reflect@^1.72.0, jsii-reflect@^1.73.0:
     oo-ascii-tree "^1.73.0"
     yargs "^16.2.0"
 
-jsii-rosetta@^1.72.0, jsii-rosetta@^1.73.0:
+jsii-rosetta@^1.73.0:
   version "1.73.0"
   resolved "https://registry.yarnpkg.com/jsii-rosetta/-/jsii-rosetta-1.73.0.tgz#7e281e77a2bbbd3b9170aff4355eaf8a0209f3e1"
   integrity sha512-UrXBaM/7jJldrlDN2aV/vaIurIZJM4ikJtcE/ugSoAuJUW42Hpi0Qd5k9MiSaE/k+KNxRpihS+skRa2TETT3Cg==
