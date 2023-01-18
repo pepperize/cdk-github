@@ -1363,9 +1363,9 @@ aws-lambda@^1.0.7:
     watchpack "^2.0.0-beta.10"
 
 aws-sdk@^2.1242.0, aws-sdk@^2.814.0:
-  version "2.1296.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1296.0.tgz#5194b3856874938bc6c682dfdb7aa276e7a8e6e9"
-  integrity sha512-6Nm6zQexyne8lVy+BW8jklGpS36mXJjq67zlsn5XuyB3+qAMlolzar9nxgtuabvb/tSQTP4RSwlhkVzOct+MvA==
+  version "2.1297.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1297.0.tgz#ee9c2d1841a86521c98e8d9899b8f9c50d7e625d"
+  integrity sha512-hZbG8tfluU2ijCCBQnQzCiPbArFtaWqAUFAWAGZ0+Df7OzTm7ya9fLYV3j3L6p2PacAyAuxXaeMbgMHlHi/D3w==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
@@ -3947,9 +3947,9 @@ jsii-diff@^1.70.0:
     yargs "^16.2.0"
 
 jsii-docgen@^7.0.126:
-  version "7.0.206"
-  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-7.0.206.tgz#0cf324792af4b8d769aa29124aa06eb3ad42dfb6"
-  integrity sha512-1IJxZaNmtCOxeQODpQRwTpK7f9htfYwwAOYC2sADEwCwHid7QYJ+iBooDkSd4wqnoDlV582xjm4822o/C3bw8g==
+  version "7.0.207"
+  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-7.0.207.tgz#38cf1ecf62c198040aeacfdc1049d47f26cc5fd3"
+  integrity sha512-WrJ+j9qYssdiyxuy3NcGaytdeyPKh9s/k3GSam8kc2v62/3R/xYgS3Qv/bOTv4/6pmoB6c9J5TaGp81E4/eQGw==
   dependencies:
     "@jsii/spec" "^1.73.0"
     case "^1.6.3"
