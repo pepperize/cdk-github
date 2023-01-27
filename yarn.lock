@@ -908,9 +908,9 @@
   integrity sha512-yOlFc+7UtL/89t2ZhjPvvB/DeAr3r+Dq58IgzsFkOAvVC6NMJXmCGjbptdXdR9qsX7pKcTL+s87FtYREi2dEEQ==
 
 "@types/aws-lambda@^8.10.108":
-  version "8.10.109"
-  resolved "https://registry.yarnpkg.com/@types/aws-lambda/-/aws-lambda-8.10.109.tgz#2f434cbfafe083529e365fe9c114787827a169a8"
-  integrity sha512-/ME92FneNyXQzrAfcnQQlW1XkCZGPDlpi2ao1MJwecN+6SbeonKeggU8eybv1DfKli90FAVT1MlIZVXfwVuCyg==
+  version "8.10.110"
+  resolved "https://registry.yarnpkg.com/@types/aws-lambda/-/aws-lambda-8.10.110.tgz#32a1f9d40b855d69830243492bbb6408098f4c88"
+  integrity sha512-r6egf2Cwv/JaFTTrF9OXFVUB3j/SXTgM9BwrlbBRjWAa2Tu6GWoDoLflppAZ8uSfbUJdXvC7Br3DjuN9pQ2NUQ==
 
 "@types/babel__core@^7.0.0", "@types/babel__core@^7.1.14":
   version "7.1.19"
@@ -3959,9 +3959,9 @@ jsii-diff@^1.70.0:
     yargs "^16.2.0"
 
 jsii-docgen@^7.0.126:
-  version "7.0.215"
-  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-7.0.215.tgz#d144594f8027e03e9c21500dcc89a7b60fd2e89d"
-  integrity sha512-x8e0L3eKGuLPB5oIKVSOCt9dJHq0JsF6BIvNm5G3Q+4zh+wRRCb8XIunEhE6ww07FvtkHpEr3m6v9E5kMA5DDw==
+  version "7.0.216"
+  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-7.0.216.tgz#ed1ecab41d7314b7d2f6f42ad1f4d1235db967a7"
+  integrity sha512-Usn+jJB4ne7WN/34okZQSTNEKK4lecn3pIokN0vlpsAHq7a+FUXJIN71YfEQb56d+YvsnD3CPVJJ4tYz/wjm7w==
   dependencies:
     "@jsii/spec" "^1.73.0"
     case "^1.6.3"
