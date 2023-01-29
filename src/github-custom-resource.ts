@@ -50,7 +50,21 @@ export interface GithubApiCall {
   readonly outputPaths?: string[];
 }
 
-export interface GithubCustomResourceProps {
+export interface GithubCustomResourceOptions {
+  /**
+   * Currently, supports only GitHub App.
+   *
+   * ```typescript
+   * const auth = { appId, privateKey };
+   * const installationAuth = { appId, privateKey, installationId };
+   * ```
+   *
+   * @see https://github.com/octokit/authentication-strategies.js/#github-app-or-installation-authentication
+   */
+  readonly authOptions: IAuthOptions;
+}
+
+export interface GithubCustomResourceProps extends GithubCustomResourceOptions {
   /**
    * Cloudformation Resource type.
    */
@@ -67,22 +81,47 @@ export interface GithubCustomResourceProps {
    * The GitHub Api call to make when the resource is deleted.
    */
   readonly onDelete?: GithubApiCall;
+}
+
+export abstract class GithubCustomResourceBase extends Construct {
   /**
-   * Currently, supports only GitHub App.
-   *
-   * ```typescript
-   * const auth = { appId, privateKey };
-   * const installationAuth = { appId, privateKey, installationId };
-   * ```
-   *
-   * @see https://github.com/octokit/authentication-strategies.js/#github-app-or-installation-authentication
+   * @internal
    */
-  readonly authOptions: IAuthOptions;
+  abstract readonly _resource: CustomResource;
+  /**
+   * The physical name of this custom resource.
+   */
+  get ref(): string {
+    return this._resource.ref;
+  }
+  /**
+   * Returns the value of an attribute of the custom resource of an arbitrary
+   * type. Attributes are returned from the custom resource provider through the
+   * `Data` map where the key is the attribute name.
+   *
+   * @param attributeName the name of the attribute
+   * @returns a token for `Fn::GetAtt`. Use `Token.asXxx` to encode the returned `Reference` as a specific type or
+   * use the convenience `getAttString` for string attributes.
+   */
+  getAtt(attributeName: string): Reference {
+    return this._resource.getAtt(attributeName);
+  }
+  /**
+   * Returns the value of an attribute of the custom resource of type string.
+   * Attributes are returned from the custom resource provider through the
+   * `Data` map where the key is the attribute name.
+   *
+   * @param attributeName the name of the attribute
+   * @returns a token for `Fn::GetAtt` encoded as a string.
+   */
+  getAttString(attributeName: string): string {
+    return this._resource.getAttString(attributeName);
+  }
 }
 
 /**
  * ```typescript
- * const secret = secrets_manager.Secret.fromSecretNameV2(scope, "Auth", "cdk-github/test");
+ * const auth = secrets_manager.Secret.fromSecretNameV2(scope, "Auth", "cdk-github/test");
  *
  * new GithubCustomResource(scope, "GithubRepo", {
  *   onCreate: {
@@ -118,12 +157,15 @@ export interface GithubCustomResourceProps {
  *     },
  *     outputPaths: [],
  *   },
- *   authOptions: AuthOptions.appAuth(secret),
+ *   authOptions: AuthOptions.appAuth(auth),
  * });
  * ```
  */
-export class GithubCustomResource extends Construct {
-  private readonly resource: CustomResource;
+export class GithubCustomResource extends GithubCustomResourceBase {
+  /**
+   * @internal
+   */
+  readonly _resource: CustomResource;
   constructor(scope: Construct, id: string, props: GithubCustomResourceProps) {
     super(scope, id);
 
@@ -131,7 +173,7 @@ export class GithubCustomResource extends Construct {
     const authOptions = props.authOptions;
     authOptions._grantRead(provider);
 
-    this.resource = new CustomResource(this, "Resource", {
+    this._resource = new CustomResource(this, "Resource", {
       serviceToken: provider.serviceToken,
       resourceType: props.resourceType,
       properties: {
@@ -141,34 +183,5 @@ export class GithubCustomResource extends Construct {
         Auth: props.authOptions._auth,
       },
     });
-  }
-  /**
-   * The physical name of this custom resource.
-   */
-  get ref(): string {
-    return this.resource.ref;
-  }
-  /**
-   * Returns the value of an attribute of the custom resource of an arbitrary
-   * type. Attributes are returned from the custom resource provider through the
-   * `Data` map where the key is the attribute name.
-   *
-   * @param attributeName the name of the attribute
-   * @returns a token for `Fn::GetAtt`. Use `Token.asXxx` to encode the returned `Reference` as a specific type or
-   * use the convenience `getAttString` for string attributes.
-   */
-  getAtt(attributeName: string): Reference {
-    return this.resource.getAtt(attributeName);
-  }
-  /**
-   * Returns the value of an attribute of the custom resource of type string.
-   * Attributes are returned from the custom resource provider through the
-   * `Data` map where the key is the attribute name.
-   *
-   * @param attributeName the name of the attribute
-   * @returns a token for `Fn::GetAtt` encoded as a string.
-   */
-  getAttString(attributeName: string): string {
-    return this.resource.getAttString(attributeName);
   }
 }

@@ -3,7 +3,6 @@ import { createAppAuth } from "@octokit/auth-app";
 import { createTokenAuth } from "@octokit/auth-token";
 import { createUnauthenticatedAuth } from "@octokit/auth-unauthenticated";
 import { OctokitOptions } from "@octokit/core/dist-types/types";
-import { RestEndpointMethodTypes } from "@octokit/plugin-rest-endpoint-methods/dist-types/generated/parameters-and-response-types"; // eslint-disable-line import/no-extraneous-dependencies
 import { RequestError } from "@octokit/request-error";
 import { Octokit } from "@octokit/rest";
 import {
@@ -11,10 +10,11 @@ import {
   OnEventRequest,
   OnEventResponse,
 } from "aws-cdk-lib/custom-resources/lib/provider-framework/types"; // eslint-disable-line import/no-unresolved
-import { SecretsManager, SSM } from "aws-sdk";
-import { AuthenticationStrategy, Auth } from "../auth";
+import { SSM } from "aws-sdk";
+import { Auth, AuthenticationStrategy } from "../auth";
 import { GithubApiCall } from "../github-custom-resource";
-import { encrypt } from "./encrypt";
+import { executeGithubApiCall } from "./execute-github-api-call";
+import { getSecretValue } from "./get-secret-value";
 
 export const handler: OnEventHandler = async (event: OnEventRequest): Promise<OnEventResponse | undefined> => {
   console.log(`Request of type ${event.RequestType} received`);
@@ -55,24 +55,10 @@ export const handler: OnEventHandler = async (event: OnEventRequest): Promise<On
 
   const octokit = new Octokit(octokitOptions);
 
-  const parameters = (() => {
-    // Handles the create or update of actions secrets. Retrieves and encrypts the SecretsManager Secret.
-    switch (`${call.endpoint}.${call.method}`) {
-      case "actions.createOrUpdateEnvironmentSecret":
-        return createOrUpdateEnvironmentSecretParameter(octokit, call.parameters);
-      case "actions.createOrUpdateOrgSecret":
-        return createOrUpdateOrgSecretParameter(octokit, call.parameters);
-      case "actions.createOrUpdateRepoSecret":
-        return createOrUpdateRepoSecretParameter(octokit, call.parameters);
-      default:
-        return call.parameters;
-    }
-  })();
-
   try {
     // https://github.com/octokit/plugin-rest-endpoint-methods.js/#usage
     // @ts-ignore
-    const response = await octokit.rest[call.endpoint][call.method](parameters);
+    const response = await executeGithubApiCall(octokit, call);
 
     console.debug("Response: %j", response);
 
@@ -93,102 +79,6 @@ export const handler: OnEventHandler = async (event: OnEventRequest): Promise<On
   }
 
   return;
-};
-
-/**
- * Handles the environment secret encryption.
- */
-const createOrUpdateEnvironmentSecretParameter = async (
-  octokit: Octokit,
-  parameters: RestEndpointMethodTypes["actions"]["createOrUpdateEnvironmentSecret"]["parameters"]
-): Promise<RestEndpointMethodTypes["actions"]["createOrUpdateEnvironmentSecret"]["parameters"]> => {
-  const {
-    data: { key_id, key },
-  } = await octokit.rest.actions.getEnvironmentPublicKey({
-    repository_id: parameters.repository_id,
-    environment_name: parameters.environment_name,
-  });
-
-  const { arn, field } = (parameters as any).value;
-  const secretString = await getSecretValue(arn, field);
-  const encryptedValue = await encrypt(secretString, key);
-
-  return {
-    repository_id: parameters.repository_id,
-    environment_name: parameters.environment_name,
-    secret_name: parameters.secret_name,
-    encrypted_value: encryptedValue,
-    key_id: key_id,
-  };
-};
-
-/**
- * Handles the org secret encryption.
- */
-const createOrUpdateOrgSecretParameter = async (
-  octokit: Octokit,
-  parameters: RestEndpointMethodTypes["actions"]["createOrUpdateOrgSecret"]["parameters"]
-): Promise<RestEndpointMethodTypes["actions"]["createOrUpdateOrgSecret"]["parameters"]> => {
-  const {
-    data: { key_id, key },
-  } = await octokit.rest.actions.getOrgPublicKey({
-    org: parameters.org,
-  });
-
-  const { arn, field } = (parameters as any).value;
-  const secretString = await getSecretValue(arn, field);
-  const encryptedValue = await encrypt(secretString, key);
-
-  return {
-    org: parameters.org,
-    visibility: parameters.visibility,
-    secret_name: parameters.secret_name,
-    encrypted_value: encryptedValue,
-    key_id: key_id,
-  };
-};
-
-/**
- * Handles the environment secret encryption.
- */
-const createOrUpdateRepoSecretParameter = async (
-  octokit: Octokit,
-  parameters: RestEndpointMethodTypes["actions"]["createOrUpdateRepoSecret"]["parameters"]
-): Promise<RestEndpointMethodTypes["actions"]["createOrUpdateRepoSecret"]["parameters"]> => {
-  const {
-    data: { key_id, key },
-  } = await octokit.rest.actions.getRepoPublicKey({
-    owner: parameters.owner,
-    repo: parameters.repo,
-  });
-
-  const { arn, field } = (parameters as any).value;
-  const secretString = await getSecretValue(arn, field);
-  const encryptedValue = await encrypt(secretString, key);
-
-  return {
-    owner: parameters.owner,
-    repo: parameters.repo,
-    secret_name: parameters.secret_name,
-    encrypted_value: encryptedValue,
-    key_id: key_id,
-  };
-};
-
-/**
- * Retrieves the Secret Value from SecretsManager by Arn. If field is given, extract json field value from secret string.
- */
-const getSecretValue = async (secretId: string, field?: string): Promise<string> => {
-  const secretArn = parseArn(secretId!);
-  const secretsManager = new SecretsManager({ region: secretArn.region });
-  const getSecretValueResponse = await secretsManager.getSecretValue({ SecretId: secretId! }).promise();
-  const secretString = getSecretValueResponse.SecretString!;
-
-  if (!field) {
-    return secretString;
-  }
-
-  return JSON.parse(secretString)[field];
 };
 
 /**

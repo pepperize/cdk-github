@@ -73,6 +73,8 @@ const project = new AwsCdkConstructLibrary({
 });
 
 project.eslint?.allowDevDeps("src/custom-resource-provider/encrypt.ts");
+project.eslint?.allowDevDeps("src/custom-resource-provider/execute-github-api-call.ts");
+project.eslint?.allowDevDeps("src/custom-resource-provider/get-secret-value.ts");
 
 project.gitpod?.addCustomTask({
   name: "setup",
