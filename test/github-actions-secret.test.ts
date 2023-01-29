@@ -1,9 +1,9 @@
 import { CfnOutput, Stack } from "aws-cdk-lib";
 import { Template } from "aws-cdk-lib/assertions";
 import * as secretsmanager from "aws-cdk-lib/aws-secretsmanager";
-import { ActionsSecret } from "../src/actions-secret";
+import { GithubActionsSecret } from "../src/github-actions-secret";
 
-describe("ActionsSecret", () => {
+describe("GithubActionsSecret", () => {
   it("Should match snapshot", () => {
     // Given
     const stack = new Stack();
@@ -12,7 +12,7 @@ describe("ActionsSecret", () => {
       "Secret",
       "arn:aws:secretsmanager:us-east-1:123456789012:secret:AnySecret-Random"
     );
-    const actionsSecrets = ActionsSecret.fromSecretsManager(secret, "any-field");
+    const actionsSecrets = GithubActionsSecret.fromSecretsManager(secret, "any-field");
 
     new CfnOutput(stack, "Output", { exportName: "test", value: stack.toJsonString(actionsSecrets) });
 
@@ -30,7 +30,7 @@ describe("ActionsSecret", () => {
       "Secret",
       "arn:aws:secretsmanager:us-east-1:123456789012:secret:AnySecret-Random"
     );
-    const actionsSecrets = ActionsSecret.fromSecretsManager(secret, "any-field");
+    const actionsSecrets = GithubActionsSecret.fromSecretsManager(secret, "any-field");
 
     // When
     const token = stack.toJsonString(actionsSecrets);

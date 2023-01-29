@@ -268,12 +268,8 @@ new GithubActionsSecretEnvironment(scope, "GithubRepo", {
   environmentName: "production",
   // 👇The name of the created GitHub secret
   secretName: "example",
-  secret: {
-    // 👇The source AWS SecretsManager secret
-    source: secret,
-    // 👇The JSON field in the AWS SecretsManager secret to use
-    field: "some-json-field",
-  },
+  // 👇The source AWS SecretsManager secret and JSON field to use
+  source: GithubActionsSecret.fromSecretsManager(secret, "some-json-field"),
   authOptions: AuthOptions.appAuth(auth),
   // 👇Whether to delete or retain the GitHub secret on resource removal
   removalPolicy: RemovalPolicy.DESTROY,
@@ -299,12 +295,8 @@ new GithubActionsSecretOrganization(scope, "GithubRepo", {
   organizationName: "pepperize",
   // 👇The name of the created GitHub secret
   secretName: "example",
-  secret: {
-    // 👇The source AWS SecretsManager secret
-    source: secret,
-    // 👇The JSON field in the AWS SecretsManager secret to use
-    field: "some-json-field",
-  },
+  // 👇The source AWS SecretsManager secret and JSON field to use
+  source: GithubActionsSecret.fromSecretsManager(secret, "some-json-field"),
   visibility: Visibility.ALL,
   authOptions: AuthOptions.appAuth(auth),
   // 👇Whether to delete or retain the GitHub secret on resource removal
@@ -330,12 +322,8 @@ new GithubActionsSecretRepository(scope, "GithubRepo", {
   repositoryName: "cdk-github",
   // 👇The name of the created GitHub secret
   secretName: "example",
-  secret: {
-    // 👇The source AWS SecretsManager secret
-    source: secret,
-    // 👇The JSON field in the AWS SecretsManager secret to use
-    field: "some-json-field",
-  },
+  // 👇The source AWS SecretsManager secret and JSON field to use
+  source: GithubActionsSecret.fromSecretsManager(secret, "some-json-field"),
   authOptions: AuthOptions.appAuth(auth),
   // 👇Whether to delete or retain the GitHub secret on resource removal
   removalPolicy: RemovalPolicy.DESTROY,

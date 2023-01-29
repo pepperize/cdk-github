@@ -2,7 +2,7 @@ import { CustomResource, Lazy, RemovalPolicy, Stack } from "aws-cdk-lib";
 import { PhysicalResourceId } from "aws-cdk-lib/custom-resources";
 import { Construct } from "constructs";
 import { GithubCustomResourceProvider } from "./custom-resource-provider/provider";
-import { Secret } from "./github-actions-secret";
+import { GithubActionsSecret } from "./github-actions-secret";
 import { GithubApiCall, GithubCustomResourceBase, GithubCustomResourceOptions } from "./github-custom-resource";
 
 export interface GithubActionsSecretEnvironmentProps extends GithubCustomResourceOptions {
@@ -21,7 +21,7 @@ export interface GithubActionsSecretEnvironmentProps extends GithubCustomResourc
   /**
    * The SSM Secret.
    */
-  readonly source: Secret;
+  readonly source: GithubActionsSecret;
   /**
    * Whether to DESTROY or RETAIN the secret on resource removal.
    * @default RETAIN
@@ -42,10 +42,7 @@ export interface GithubActionsSecretEnvironmentProps extends GithubCustomResourc
  *   repositoryId: "558989134",
  *   environmentName: "production",
  *   secretName: "example",
- *   source: {
- *     secret: secret,
- *     field: "some-json-field",
- *   },
+ *   source: GithubActionsSecret.fromSecretsManager(secret, "some-json-field"),
  *   authOptions: AuthOptions.appAuth(auth),
  *   removalPolicy: RemovalPolicy.DESTROY,
  * });
@@ -62,7 +59,7 @@ export class GithubActionsSecretEnvironment extends GithubCustomResourceBase {
     const provider = GithubCustomResourceProvider.getOrCreate(this);
     const authOptions = props.authOptions;
     authOptions._grantRead(provider);
-    props.source.secret.grantRead(provider);
+    props.source._grantRead(provider);
 
     const onCreate: GithubApiCall = {
       endpoint: "actions",
@@ -71,10 +68,7 @@ export class GithubActionsSecretEnvironment extends GithubCustomResourceBase {
         repository_id: props.repositoryId,
         environment_name: props.environmentName,
         secret_name: props.secretName,
-        value: {
-          arn: props.source.secret.secretArn,
-          field: props.source.field,
-        },
+        value: props.source,
       },
       physicalResourceId: PhysicalResourceId.of(`${props.repositoryId}::${props.environmentName}::${props.secretName}`),
     };

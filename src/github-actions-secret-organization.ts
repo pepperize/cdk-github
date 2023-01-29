@@ -2,7 +2,7 @@ import { CustomResource, Lazy, RemovalPolicy, Stack } from "aws-cdk-lib";
 import { PhysicalResourceId } from "aws-cdk-lib/custom-resources";
 import { Construct } from "constructs";
 import { GithubCustomResourceProvider } from "./custom-resource-provider/provider";
-import { Secret } from "./github-actions-secret";
+import { GithubActionsSecret } from "./github-actions-secret";
 import { GithubApiCall, GithubCustomResourceBase, GithubCustomResourceOptions } from "./github-custom-resource";
 
 export enum Visibility {
@@ -23,7 +23,7 @@ export interface GithubActionsSecretOrganizationProps extends GithubCustomResour
   /**
    * The SSM Secret.
    */
-  readonly source: Secret;
+  readonly source: GithubActionsSecret;
   /**
    * Which type of organization repositories have access to the organization secret.
    */
@@ -47,10 +47,7 @@ export interface GithubActionsSecretOrganizationProps extends GithubCustomResour
  * new GithubActionsSecretOrganization(scope, "GithubRepo", {
  *   organizationName: "pepperize",
  *   secretName: "example",
- *   source: {
- *     secret: secret,
- *     field: "some-json-field",
- *   },
+ *   source: GithubActionsSecret.fromSecretsManager(secret, "some-json-field"),
  *   visibility: Visibility.ALL,
  *   authOptions: AuthOptions.appAuth(auth),
  *   removalPolicy: RemovalPolicy.DESTROY,
@@ -68,7 +65,7 @@ export class GithubActionsSecretOrganization extends GithubCustomResourceBase {
     const provider = GithubCustomResourceProvider.getOrCreate(this);
     const authOptions = props.authOptions;
     authOptions._grantRead(provider);
-    props.source.secret.grantRead(provider);
+    props.source._grantRead(provider);
 
     const onCreate: GithubApiCall = {
       endpoint: "actions",
@@ -76,10 +73,7 @@ export class GithubActionsSecretOrganization extends GithubCustomResourceBase {
       parameters: {
         org: props.organizationName,
         secret_name: props.secretName,
-        value: {
-          arn: props.source.secret.secretArn,
-          field: props.source.field,
-        },
+        value: props.source,
         visibility: props.visibility,
       },
       physicalResourceId: PhysicalResourceId.of(`${props.organizationName}::${props.secretName}`),
