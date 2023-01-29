@@ -14,6 +14,8 @@ const project = new AwsCdkConstructLibrary({
     "construct",
     "custom-resource",
     "github",
+    "actions",
+    "secret",
     "provider",
     "repository",
     "teams",

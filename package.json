@@ -88,6 +88,7 @@
   },
   "keywords": [
     "Utilities",
+    "actions",
     "aws",
     "cdk",
     "construct",
@@ -98,6 +99,7 @@
     "provider",
     "repository",
     "rest",
+    "secret",
     "teams",
     "user"
   ],
