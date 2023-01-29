@@ -1,9 +1,10 @@
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://makeapullrequest.com)
 [![GitHub](https://img.shields.io/github/license/pepperize/cdk-github?style=flat-square)](https://github.com/pepperize/cdk-github/blob/main/LICENSE)
 [![npm (scoped)](https://img.shields.io/npm/v/@pepperize/cdk-github?style=flat-square)](https://www.npmjs.com/package/@pepperize/cdk-github)
 [![PyPI](https://img.shields.io/pypi/v/pepperize.cdk-github?style=flat-square)](https://pypi.org/project/pepperize.cdk-github/)
 [![Nuget](https://img.shields.io/nuget/v/Pepperize.CDK.Github?style=flat-square)](https://www.nuget.org/packages/Pepperize.CDK.Github/)
 [![Sonatype Nexus (Releases)](https://img.shields.io/nexus/r/com.pepperize/cdk-github?server=https%3A%2F%2Fs01.oss.sonatype.org%2F&style=flat-square)](https://s01.oss.sonatype.org/content/repositories/releases/com/pepperize/cdk-github/)
-[![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/pepperize/cdk-github/release/main?label=release&style=flat-square)](https://github.com/pepperize/cdk-github/actions/workflows/release.yml)
+[![GitHub Workflow Status (branch)](https://img.shields.io/github/actions/workflow/status/pepperize/cdk-github/release.yml?branch=main&label=release&style=flat-square)](https://github.com/pepperize/cdk-github/actions/workflows/release.yml)
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/pepperize/cdk-github?sort=semver&style=flat-square)](https://github.com/pepperize/cdk-github/releases)
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod&style=flat-square)](https://gitpod.io/#https://github.com/pepperize/cdk-github)
 
@@ -12,6 +13,8 @@
 Manage GitHub resources like repositories, teams, members, integrations and workflows with the AWS CDK as Custom Resources in CloudFormation with [cdk-github](https://github.com/pepperize/cdk-github).
 
 > You configure the endpoint, method and parameters documented by [@octokit/rest](https://octokit.github.io/rest.js/v19) and AWS CloudFormation runs them anytime you create, update (if you changed the custom resource), or delete stacks. When CloudFormation sends a lifecycle event notification, then your custom resource sends the request to the [GitHub REST API](https://docs.github.com/en/rest).
+
+[![View on Construct Hub](https://constructs.dev/badge?package=%40pepperize%2Fcdk-github)](https://constructs.dev/packages/@pepperize/cdk-github)
 
 ## Install
 
