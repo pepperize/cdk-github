@@ -76,6 +76,7 @@ export class GithubActionsSecretOrganization extends GithubCustomResourceBase {
         value: props.source,
         visibility: props.visibility,
       },
+      outputPaths: [],
       physicalResourceId: PhysicalResourceId.of(`${props.organizationName}::${props.secretName}`),
     };
 
@@ -88,6 +89,7 @@ export class GithubActionsSecretOrganization extends GithubCustomResourceBase {
               org: props.organizationName,
               secret_name: props.secretName,
             },
+            outputPaths: [],
           }
         : undefined;
 

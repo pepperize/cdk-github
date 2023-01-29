@@ -70,6 +70,7 @@ export class GithubActionsSecretEnvironment extends GithubCustomResourceBase {
         secret_name: props.secretName,
         value: props.source,
       },
+      outputPaths: [],
       physicalResourceId: PhysicalResourceId.of(`${props.repositoryId}::${props.environmentName}::${props.secretName}`),
     };
 
@@ -83,6 +84,7 @@ export class GithubActionsSecretEnvironment extends GithubCustomResourceBase {
               environment_name: props.environmentName,
               secret_name: props.secretName,
             },
+            outputPaths: [],
           }
         : undefined;
 
