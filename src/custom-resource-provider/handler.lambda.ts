@@ -11,10 +11,10 @@ import {
   OnEventResponse,
 } from "aws-cdk-lib/custom-resources/lib/provider-framework/types"; // eslint-disable-line import/no-unresolved
 import { SSM } from "aws-sdk";
-import { Auth, AuthenticationStrategy } from "../auth";
-import { GithubApiCall } from "../github-custom-resource";
 import { executeGithubApiCall } from "./execute-github-api-call";
 import { getSecretValue } from "./get-secret-value";
+import { Auth, AuthenticationStrategy } from "../auth";
+import { GithubApiCall } from "../github-custom-resource";
 
 export const handler: OnEventHandler = async (event: OnEventRequest): Promise<OnEventResponse | undefined> => {
   console.log(`Request of type ${event.RequestType} received`);

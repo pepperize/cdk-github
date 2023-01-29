@@ -1,9 +1,9 @@
 import { RestEndpointMethodTypes } from "@octokit/plugin-rest-endpoint-methods/dist-types/generated/parameters-and-response-types"; // eslint-disable-line import/no-extraneous-dependencies
 import { Octokit } from "@octokit/rest";
 import { OctokitResponse } from "@octokit/types";
-import { GithubApiCall } from "../github-custom-resource";
 import { encrypt } from "./encrypt";
 import { getSecretValue } from "./get-secret-value";
+import { GithubApiCall } from "../github-custom-resource";
 
 export const executeGithubApiCall = async (
   octokit: Octokit,
