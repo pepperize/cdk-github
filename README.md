@@ -204,14 +204,14 @@ const authOptions = AuthOptions.tokenAuth(parameter);
 const authOptions = AuthOptions.unauthenticated();
 ```
 
-## Example
+## Manage a GitHub Repository - Example
 
 [@octokit/plugin-rest-endpoint-methods](https://github.com/octokit/plugin-rest-endpoint-methods.js/#usage)
 
 ```typescript
-const secret = secrets_manager.Secret.fromSecretNameV2(stack, "Auth", "cdk-github/test");
+const auth = secrets_manager.Secret.fromSecretNameV2(stack, "Auth", "cdk-github/test");
 
-new GithubCustomResource(stack, "GithubRepo", {
+const repo = new GithubCustomResource(stack, "GithubRepo", {
   onCreate: {
     // https://octokit.github.io/rest.js/v19/#repos-create-in-org
     endpoint: "repos",
@@ -245,6 +245,92 @@ new GithubCustomResource(stack, "GithubRepo", {
     },
     outputPaths: [],
   },
-  authOptions: AuthOptions.appAuth(secret),
+  authOptions: AuthOptions.appAuth(auth),
+});
+
+// 👇 This will return the created repository id as a CDK Token
+repo.getAtt("id");
+```
+
+## Manage GitHub Actions Secrets
+
+### Environment Secret
+
+Manages an environment secret. Will fetch the source AWS SecretsManager secret and encrypt it to store in GitHub.
+
+```typescript
+// 👇The GitHub API authentication secret
+const auth = secrets_manager.Secret.fromSecretNameV2(scope, "Auth", "cdk-github/test");
+
+// 👇The AWS SecretsManager Secret to configure as GitHub Action secret.
+const secret = secrets_manager.Secret.fromSecretNameV2(scope, "Secret", "any-secret/example");
+
+new GithubActionsSecretEnvironment(scope, "GithubRepo", {
+  // 👇The repository id, which you may lookup from the page source or via a custom resource
+  repositoryId: "558989134",
+  environmentName: "production",
+  // 👇The name of the created GitHub secret
+  secretName: "example",
+  // 👇The source AWS SecretsManager secret and JSON field to use
+  source: GithubActionsSecret.fromSecretsManager(secret, "some-json-field"),
+  authOptions: AuthOptions.appAuth(auth),
+  // 👇Whether to delete or retain the GitHub secret on resource removal
+  removalPolicy: RemovalPolicy.DESTROY,
 });
 ```
+
+> You may retrieve the `repository_id` from the GitHub Repository page source's meta tag i.e. `<meta name="octolytics-dimension-repository_id" content="558989134">` or from another `GithubCustomResource` via `getAtt()`.
+
+See [GitHub Developer Guide](https://docs.github.com/de/rest/actions/secrets#create-or-update-an-environment-secret), [API Reference](https://github.com/pepperize/cdk-github/blob/main/API.md)
+
+### Organization Secret
+
+Manage an GitHib Actions organization secret. Will fetch the source AWS SecretsManager secret and encrypt it to store in GitHub.
+
+```typescript
+// 👇The GitHub API authentication secret
+const auth = secrets_manager.Secret.fromSecretNameV2(scope, "Auth", "cdk-github/test");
+
+// 👇The AWS SecretsManager Secret to configure as GitHub Action secret.
+const secret = secrets_manager.Secret.fromSecretNameV2(scope, "Secret", "any-secret/example");
+
+new GithubActionsSecretOrganization(scope, "GithubRepo", {
+  organizationName: "pepperize",
+  // 👇The name of the created GitHub secret
+  secretName: "example",
+  // 👇The source AWS SecretsManager secret and JSON field to use
+  source: GithubActionsSecret.fromSecretsManager(secret, "some-json-field"),
+  visibility: Visibility.ALL,
+  authOptions: AuthOptions.appAuth(auth),
+  // 👇Whether to delete or retain the GitHub secret on resource removal
+  removalPolicy: RemovalPolicy.DESTROY,
+});
+```
+
+See [GitHub Developer Guide](https://docs.github.com/de/rest/actions/secrets#create-or-update-an-organization-secret), [API Reference](https://github.com/pepperize/cdk-github/blob/main/API.md)
+
+### Repository Secret
+
+Manage an GitHib Actions Repository secret. Will fetch the source AWS SecretsManager secret and encrypt it to store in GitHub.
+
+```typescript
+// 👇The GitHub API authentication secret
+const auth = secrets_manager.Secret.fromSecretNameV2(scope, "Auth", "cdk-github/test");
+
+// 👇The AWS SecretsManager Secret to configure as GitHub Action secret.
+const secret = secrets_manager.Secret.fromSecretNameV2(scope, "Secret", "any-secret/example");
+
+new GithubActionsSecretRepository(scope, "GithubRepo", {
+  owner: "pepperize",
+  repositoryName: "cdk-github",
+  // 👇The name of the created GitHub secret
+  secretName: "example",
+  // 👇The source AWS SecretsManager secret and JSON field to use
+  source: GithubActionsSecret.fromSecretsManager(secret, "some-json-field"),
+  authOptions: AuthOptions.appAuth(auth),
+  // 👇Whether to delete or retain the GitHub secret on resource removal
+  removalPolicy: RemovalPolicy.DESTROY,
+});
+```
+
+See [GitHub Developer Guide](https://docs.github.com/de/rest/actions/secrets#create-or-update-a-repository-secret), [API Reference](https://github.com/pepperize/cdk-github/blob/main/API.md)

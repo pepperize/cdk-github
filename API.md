@@ -4,7 +4,7 @@
 
 ### GithubCustomResource <a name="GithubCustomResource" id="@pepperize/cdk-github.GithubCustomResource"></a>
 
-```typescript const secret = secrets_manager.Secret.fromSecretNameV2(scope, "Auth", "cdk-github/test");
+```typescript const auth = secrets_manager.Secret.fromSecretNameV2(scope, "Auth", "cdk-github/test");
 
 new GithubCustomResource(scope, "GithubRepo", {
    onCreate: {
@@ -40,7 +40,7 @@ new GithubCustomResource(scope, "GithubRepo", {
      },
      outputPaths: [],
    },
-   authOptions: AuthOptions.appAuth(secret),
+   authOptions: AuthOptions.appAuth(auth),
 });
 ```
 
@@ -194,6 +194,159 @@ The physical name of this custom resource.
 ---
 
 
+### GithubCustomResourceBase <a name="GithubCustomResourceBase" id="@pepperize/cdk-github.GithubCustomResourceBase"></a>
+
+#### Initializers <a name="Initializers" id="@pepperize/cdk-github.GithubCustomResourceBase.Initializer"></a>
+
+```typescript
+import { GithubCustomResourceBase } from '@pepperize/cdk-github'
+
+new GithubCustomResourceBase(scope: Construct, id: string)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@pepperize/cdk-github.GithubCustomResourceBase.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | The scope in which to define this construct. |
+| <code><a href="#@pepperize/cdk-github.GithubCustomResourceBase.Initializer.parameter.id">id</a></code> | <code>string</code> | The scoped construct ID. |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="@pepperize/cdk-github.GithubCustomResourceBase.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+The scope in which to define this construct.
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="@pepperize/cdk-github.GithubCustomResourceBase.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+The scoped construct ID.
+
+Must be unique amongst siblings. If
+the ID includes a path separator (`/`), then it will be replaced by double
+dash `--`.
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@pepperize/cdk-github.GithubCustomResourceBase.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@pepperize/cdk-github.GithubCustomResourceBase.getAtt">getAtt</a></code> | Returns the value of an attribute of the custom resource of an arbitrary type. |
+| <code><a href="#@pepperize/cdk-github.GithubCustomResourceBase.getAttString">getAttString</a></code> | Returns the value of an attribute of the custom resource of type string. |
+
+---
+
+##### `toString` <a name="toString" id="@pepperize/cdk-github.GithubCustomResourceBase.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `getAtt` <a name="getAtt" id="@pepperize/cdk-github.GithubCustomResourceBase.getAtt"></a>
+
+```typescript
+public getAtt(attributeName: string): Reference
+```
+
+Returns the value of an attribute of the custom resource of an arbitrary type.
+
+Attributes are returned from the custom resource provider through the
+`Data` map where the key is the attribute name.
+
+###### `attributeName`<sup>Required</sup> <a name="attributeName" id="@pepperize/cdk-github.GithubCustomResourceBase.getAtt.parameter.attributeName"></a>
+
+- *Type:* string
+
+the name of the attribute.
+
+---
+
+##### `getAttString` <a name="getAttString" id="@pepperize/cdk-github.GithubCustomResourceBase.getAttString"></a>
+
+```typescript
+public getAttString(attributeName: string): string
+```
+
+Returns the value of an attribute of the custom resource of type string.
+
+Attributes are returned from the custom resource provider through the
+`Data` map where the key is the attribute name.
+
+###### `attributeName`<sup>Required</sup> <a name="attributeName" id="@pepperize/cdk-github.GithubCustomResourceBase.getAttString.parameter.attributeName"></a>
+
+- *Type:* string
+
+the name of the attribute.
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@pepperize/cdk-github.GithubCustomResourceBase.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="@pepperize/cdk-github.GithubCustomResourceBase.isConstruct"></a>
+
+```typescript
+import { GithubCustomResourceBase } from '@pepperize/cdk-github'
+
+GithubCustomResourceBase.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="@pepperize/cdk-github.GithubCustomResourceBase.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@pepperize/cdk-github.GithubCustomResourceBase.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@pepperize/cdk-github.GithubCustomResourceBase.property.ref">ref</a></code> | <code>string</code> | The physical name of this custom resource. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@pepperize/cdk-github.GithubCustomResourceBase.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `ref`<sup>Required</sup> <a name="ref" id="@pepperize/cdk-github.GithubCustomResourceBase.property.ref"></a>
+
+```typescript
+public readonly ref: string;
+```
+
+- *Type:* string
+
+The physical name of this custom resource.
+
+---
+
+
 ## Structs <a name="Structs" id="Structs"></a>
 
 ### GithubApiCall <a name="GithubApiCall" id="@pepperize/cdk-github.GithubApiCall"></a>
@@ -308,6 +461,43 @@ public readonly physicalResourceId: PhysicalResourceId;
 The physical resource id of the custom resource for this call.
 
 > [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/crpg-ref-responses.html](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/crpg-ref-responses.html)
+
+---
+
+### GithubCustomResourceOptions <a name="GithubCustomResourceOptions" id="@pepperize/cdk-github.GithubCustomResourceOptions"></a>
+
+#### Initializer <a name="Initializer" id="@pepperize/cdk-github.GithubCustomResourceOptions.Initializer"></a>
+
+```typescript
+import { GithubCustomResourceOptions } from '@pepperize/cdk-github'
+
+const githubCustomResourceOptions: GithubCustomResourceOptions = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@pepperize/cdk-github.GithubCustomResourceOptions.property.authOptions">authOptions</a></code> | <code><a href="#@pepperize/cdk-github.IAuthOptions">IAuthOptions</a></code> | Currently, supports only GitHub App. |
+
+---
+
+##### `authOptions`<sup>Required</sup> <a name="authOptions" id="@pepperize/cdk-github.GithubCustomResourceOptions.property.authOptions"></a>
+
+```typescript
+public readonly authOptions: IAuthOptions;
+```
+
+- *Type:* <a href="#@pepperize/cdk-github.IAuthOptions">IAuthOptions</a>
+
+Currently, supports only GitHub App.
+
+```typescript
+const auth = { appId, privateKey };
+const installationAuth = { appId, privateKey, installationId };
+```
+
+> [https://github.com/octokit/authentication-strategies.js/#github-app-or-installation-authentication](https://github.com/octokit/authentication-strategies.js/#github-app-or-installation-authentication)
 
 ---
 

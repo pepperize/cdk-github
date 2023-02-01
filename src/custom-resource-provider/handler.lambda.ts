@@ -10,8 +10,10 @@ import {
   OnEventRequest,
   OnEventResponse,
 } from "aws-cdk-lib/custom-resources/lib/provider-framework/types"; // eslint-disable-line import/no-unresolved
-import { SecretsManager, SSM } from "aws-sdk";
-import { AuthenticationStrategy, Auth } from "../auth";
+import { SSM } from "aws-sdk";
+import { executeGithubApiCall } from "./execute-github-api-call";
+import { getSecretValue } from "./get-secret-value";
+import { Auth, AuthenticationStrategy } from "../auth";
 import { GithubApiCall } from "../github-custom-resource";
 
 export const handler: OnEventHandler = async (event: OnEventRequest): Promise<OnEventResponse | undefined> => {
@@ -30,13 +32,9 @@ export const handler: OnEventHandler = async (event: OnEventRequest): Promise<On
   const { strategy, secret } = event.ResourceProperties.Auth as Auth;
   switch (strategy) {
     case AuthenticationStrategy.AUTH_APP:
-      const secretArn = parseArn(secret!);
-      const secretsManager = new SecretsManager({ region: secretArn.region });
-      const getSecretValueResponse = await secretsManager.getSecretValue({ SecretId: secret! }).promise();
-
       // https://github.com/octokit/authentication-strategies.js/#github-app-or-installation-authentication
       octokitOptions.authStrategy = createAppAuth;
-      octokitOptions.auth = JSON.parse(getSecretValueResponse.SecretString!);
+      octokitOptions.auth = JSON.parse(await getSecretValue(secret!));
       break;
 
     case AuthenticationStrategy.AUTH_TOKEN:
@@ -60,7 +58,7 @@ export const handler: OnEventHandler = async (event: OnEventRequest): Promise<On
   try {
     // https://github.com/octokit/plugin-rest-endpoint-methods.js/#usage
     // @ts-ignore
-    const response = await octokit.rest[call.endpoint][call.method](call.parameters);
+    const response = await executeGithubApiCall(octokit, call);
 
     console.debug("Response: %j", response);
 

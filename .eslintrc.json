@@ -61,7 +61,10 @@
           "**/projenrc/**",
           ".projenrc.ts",
           "projenrc/**/*.ts",
-          "src/custom-resource-provider/handler.lambda.ts"
+          "src/custom-resource-provider/handler.lambda.ts",
+          "src/custom-resource-provider/encrypt.ts",
+          "src/custom-resource-provider/execute-github-api-call.ts",
+          "src/custom-resource-provider/get-secret-value.ts"
         ],
         "optionalDependencies": false,
         "peerDependencies": true

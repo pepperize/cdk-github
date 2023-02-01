@@ -14,6 +14,8 @@ const project = new AwsCdkConstructLibrary({
     "construct",
     "custom-resource",
     "github",
+    "actions",
+    "secret",
     "provider",
     "repository",
     "teams",
@@ -38,8 +40,11 @@ const project = new AwsCdkConstructLibrary({
     "@octokit/types",
     "@pepperize/projen-awscdk-construct@latest",
     "@types/aws-lambda",
+    "@types/libsodium-wrappers",
     "aws-lambda",
     "aws-sdk",
+    "libsodium",
+    "libsodium-wrappers",
   ],
 
   versionrcOptions: {
@@ -68,6 +73,10 @@ const project = new AwsCdkConstructLibrary({
 
   gitignore: ["cdk.out"],
 });
+
+project.eslint?.allowDevDeps("src/custom-resource-provider/encrypt.ts");
+project.eslint?.allowDevDeps("src/custom-resource-provider/execute-github-api-call.ts");
+project.eslint?.allowDevDeps("src/custom-resource-provider/get-secret-value.ts");
 
 project.gitpod?.addCustomTask({
   name: "setup",
