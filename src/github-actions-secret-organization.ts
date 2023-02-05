@@ -39,7 +39,7 @@ export interface GithubActionsSecretOrganizationProps extends GithubCustomResour
  *
  * ```typescript
  * // The GitHub API authentication secret
- * const auth = secrets_manager.Secret.fromSecretNameV2(scope, "Auth", "cdk-github/test");
+ * const auth = secrets_manager.Secret.fromSecretNameV2(scope, "Auth", "cdk-github/github-token");
  *
  * // The AWS SecretsManager Secret to configure as GitHub Action secret.
  * const secret = secrets_manager.Secret.fromSecretNameV2(scope, "Secret", "any-secret/example");

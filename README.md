@@ -107,7 +107,7 @@ yarn build
 6. Import your secret
 
    ```typescript
-   const secret = secrets_manager.Secret.fromSecretNameV2(stack, "Auth", "cdk-github/test");
+   const secret = secrets_manager.Secret.fromSecretNameV2(stack, "Auth", "cdk-github/github-token");
    ```
 
 7. Configure GitHub App authenticate as an installation
@@ -167,7 +167,7 @@ Lookup the secret in your AWS CDK app:
 
 ```typescript
 // 👇Lookup your secret containing the AuthOptions
-const secret = secrets_manager.Secret.fromSecretNameV2(stack, "Auth", "cdk-github/test");
+const secret = secrets_manager.Secret.fromSecretNameV2(stack, "Auth", "cdk-github/github-token");
 // 👇This will send the secret arn to the custom resource handler
 const authOptions = AuthOptions.appAuth(secret);
 ```
@@ -190,7 +190,7 @@ Just add your PAT to an SSM StringParameter
 
 ```typescript
 // 👇Lookup your parameter containing the TOKEN
-const parameter = ssm.StringParameter.fromStringParameterName(stack, "Auth", "cdk-github/test");
+const parameter = ssm.StringParameter.fromStringParameterName(stack, "Auth", "cdk-github/github-token");
 // 👇This will send the parameter arn to the custom resource handler
 const authOptions = AuthOptions.tokenAuth(parameter);
 ```
@@ -209,7 +209,7 @@ const authOptions = AuthOptions.unauthenticated();
 [@octokit/plugin-rest-endpoint-methods](https://github.com/octokit/plugin-rest-endpoint-methods.js/#usage)
 
 ```typescript
-const auth = secrets_manager.Secret.fromSecretNameV2(stack, "Auth", "cdk-github/test");
+const auth = secrets_manager.Secret.fromSecretNameV2(stack, "Auth", "cdk-github/github-token");
 
 const repo = new GithubCustomResource(stack, "GithubRepo", {
   onCreate: {
@@ -260,7 +260,7 @@ Manages an environment secret. Will fetch the source AWS SecretsManager secret a
 
 ```typescript
 // 👇The GitHub API authentication secret
-const auth = secrets_manager.Secret.fromSecretNameV2(scope, "Auth", "cdk-github/test");
+const auth = secrets_manager.Secret.fromSecretNameV2(scope, "Auth", "cdk-github/github-token");
 
 // 👇The AWS SecretsManager Secret to configure as GitHub Action secret.
 const secret = secrets_manager.Secret.fromSecretNameV2(scope, "Secret", "any-secret/example");
@@ -289,7 +289,7 @@ Manage an GitHib Actions organization secret. Will fetch the source AWS SecretsM
 
 ```typescript
 // 👇The GitHub API authentication secret
-const auth = secrets_manager.Secret.fromSecretNameV2(scope, "Auth", "cdk-github/test");
+const auth = secrets_manager.Secret.fromSecretNameV2(scope, "Auth", "cdk-github/github-token");
 
 // 👇The AWS SecretsManager Secret to configure as GitHub Action secret.
 const secret = secrets_manager.Secret.fromSecretNameV2(scope, "Secret", "any-secret/example");
@@ -315,7 +315,7 @@ Manage an GitHib Actions Repository secret. Will fetch the source AWS SecretsMan
 
 ```typescript
 // 👇The GitHub API authentication secret
-const auth = secrets_manager.Secret.fromSecretNameV2(scope, "Auth", "cdk-github/test");
+const auth = secrets_manager.Secret.fromSecretNameV2(scope, "Auth", "cdk-github/github-token");
 
 // 👇The AWS SecretsManager Secret to configure as GitHub Action secret.
 const secret = secrets_manager.Secret.fromSecretNameV2(scope, "Secret", "any-secret/example");

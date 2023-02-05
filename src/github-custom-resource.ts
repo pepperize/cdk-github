@@ -121,7 +121,7 @@ export abstract class GithubCustomResourceBase extends Construct {
 
 /**
  * ```typescript
- * const auth = secrets_manager.Secret.fromSecretNameV2(scope, "Auth", "cdk-github/test");
+ * const auth = secrets_manager.Secret.fromSecretNameV2(scope, "Auth", "cdk-github/github-token");
  *
  * new GithubCustomResource(scope, "GithubRepo", {
  *   onCreate: {

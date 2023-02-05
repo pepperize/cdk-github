@@ -56,8 +56,6 @@ export const handler: OnEventHandler = async (event: OnEventRequest): Promise<On
   const octokit = new Octokit(octokitOptions);
 
   try {
-    // https://github.com/octokit/plugin-rest-endpoint-methods.js/#usage
-    // @ts-ignore
     const response = await executeGithubApiCall(octokit, call);
 
     console.debug("Response: %j", response);
