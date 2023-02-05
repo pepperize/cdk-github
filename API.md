@@ -4,7 +4,7 @@
 
 ### GithubCustomResource <a name="GithubCustomResource" id="@pepperize/cdk-github.GithubCustomResource"></a>
 
-```typescript const auth = secrets_manager.Secret.fromSecretNameV2(scope, "Auth", "cdk-github/test");
+```typescript const auth = secrets_manager.Secret.fromSecretNameV2(scope, "Auth", "cdk-github/github-token");
 
 new GithubCustomResource(scope, "GithubRepo", {
    onCreate: {
