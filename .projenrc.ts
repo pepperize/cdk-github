@@ -1,5 +1,6 @@
 import { AwsCdkConstructLibrary } from "@pepperize/projen-awscdk-construct";
-import { javascript } from "projen";
+import { javascript, awscdk } from "projen";
+
 const project = new AwsCdkConstructLibrary({
   author: "Patrick Florek",
   authorAddress: "patrick.florek@gmail.com",
@@ -72,6 +73,10 @@ const project = new AwsCdkConstructLibrary({
   gitpod: true,
 
   gitignore: ["cdk.out"],
+
+  lambdaOptions: {
+    runtime: awscdk.LambdaRuntime.NODEJS_16_X,
+  },
 });
 
 project.eslint?.allowDevDeps("src/custom-resource-provider/encrypt.ts");
