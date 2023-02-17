@@ -850,9 +850,9 @@
   integrity sha512-T8TbSnGsxo6TDBJx/Sgv/BlVJL3tshxZP7Aq5R1mSnM5OcHY2dQaxLMu2+E8u3gN0MLOzdjurqN4ZRVuzQycOQ==
 
 "@pepperize/projen-awscdk-construct@latest":
-  version "0.0.427"
-  resolved "https://registry.yarnpkg.com/@pepperize/projen-awscdk-construct/-/projen-awscdk-construct-0.0.427.tgz#87bd3aea2ad99c40a4060b9810f024f5de809f9e"
-  integrity sha512-gxq7HUSxZ10jjpo+MZQTI3x5n8ogyQG67xNRrdNciaVWeOxGlbzB0idYHMF/ks0KwTHsII1/2jFdEeFwJBCF1A==
+  version "0.0.428"
+  resolved "https://registry.yarnpkg.com/@pepperize/projen-awscdk-construct/-/projen-awscdk-construct-0.0.428.tgz#5f6b495a0da0f141c3abe9cf6f872d8918d714e4"
+  integrity sha512-pi+Lp3Cbi3G/eczYahy82jxUIOUHyN3uOaSsVDtU2lHmwxKT37Oq68HVKzcRZd/0uuBduOogrpaKyHVPmkeivg==
   dependencies:
     projen "^0.65.25"
 
@@ -1381,9 +1381,9 @@ aws-lambda@^1.0.7:
     watchpack "^2.0.0-beta.10"
 
 aws-sdk@^2.1242.0, aws-sdk@^2.814.0:
-  version "2.1316.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1316.0.tgz#4c6cf44ec8c9eaaecfa0c7d4ea141861a246b260"
-  integrity sha512-5y0PR0RcswLlDkIq2E3dF4rvCn7b7yqyVae8SzDv5tcjebwt+YCSD2jJu5Cu7nahqtpWz35I2QGD1OcLK+rlUQ==
+  version "2.1317.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1317.0.tgz#b1534696b840654a55660eed467ed7ddbbb2e1d1"
+  integrity sha512-9gQ3ApcG4OhM19LEcmd/1jclwHvI3jjVaFYNQkY88g2eFJDW5T8qP+u2epdv+o3bPWxzg0TcyPhOSlN4xAnIJQ==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
@@ -3965,9 +3965,9 @@ jsii-diff@^1.70.0:
     yargs "^16.2.0"
 
 jsii-docgen@^7.0.126:
-  version "7.0.234"
-  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-7.0.234.tgz#a048c117b60b94fe4422b04e4eca8e5b49f745d0"
-  integrity sha512-6Kn611o1aoIhncDRqvnKLyQg76cG02FA/20yzHq23E/nhaIR81nGj1APU2wlYzo6itRoJYsrawvIy5Vq+m9t/w==
+  version "7.0.235"
+  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-7.0.235.tgz#6de6a508f2cb62de5e859315d8baa99cfc4a66e0"
+  integrity sha512-esS/206w3+xhSpTPJaNWqIb2DIVCQiAoaSnbsKwhmrSE8Fll2mzIhHoipJTmfYzizhUk/ft6Y8/eC2NvDOhjwg==
   dependencies:
     "@jsii/spec" "^1.75.0"
     case "^1.6.3"
