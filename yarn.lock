@@ -858,9 +858,9 @@
   integrity sha512-T8TbSnGsxo6TDBJx/Sgv/BlVJL3tshxZP7Aq5R1mSnM5OcHY2dQaxLMu2+E8u3gN0MLOzdjurqN4ZRVuzQycOQ==
 
 "@pepperize/projen-awscdk-construct@latest":
-  version "0.0.429"
-  resolved "https://registry.yarnpkg.com/@pepperize/projen-awscdk-construct/-/projen-awscdk-construct-0.0.429.tgz#1e7dc6dcadd5463586f36501afa2ba5353d85f97"
-  integrity sha512-MkepXOq4itQ61jBZ5xh8FzcC091NHNiq2996DVXh3ENTcjDHs0JMxSY155V0KjpQXvpysONv2rMDfKPaeJtUqg==
+  version "0.0.436"
+  resolved "https://registry.yarnpkg.com/@pepperize/projen-awscdk-construct/-/projen-awscdk-construct-0.0.436.tgz#0c2e1592fed02f3d6bfe0a16e97f353d08baa871"
+  integrity sha512-gQ5VsUy1gHAcF1kbD4UyBGBGGRN7DhaEAMnOm/Cc8xlNa+3eTjCAepJneLgux4r3lp2gbARlGEGqKUmjbrhrWw==
   dependencies:
     projen "^0.65.25"
 
@@ -1389,9 +1389,9 @@ aws-lambda@^1.0.7:
     watchpack "^2.0.0-beta.10"
 
 aws-sdk@^2.1242.0, aws-sdk@^2.814.0:
-  version "2.1319.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1319.0.tgz#be1d91fcac13262fa106f0f0a15ee07c023972fd"
-  integrity sha512-/gPCVsCARitph9FmBTXZmzjX0Br8LwBfu2MTNPGjVCiZkEUSoUWAAigIWkvrjTWOXCI7TSElRwtCzlsVHdv5VA==
+  version "2.1323.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1323.0.tgz#ee27583ae502ce37fa644657f3d90a02ce468f2c"
+  integrity sha512-GoLwk2SuG9A6eWgc1mGmm548dklheDmkeptHRw2RhCvq2GZqlc4AzStFUjUURy4O4NQmd2ZiQIoeseue4RwurA==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
@@ -3973,9 +3973,9 @@ jsii-diff@^1.70.0:
     yargs "^16.2.0"
 
 jsii-docgen@^7.0.126:
-  version "7.1.3"
-  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-7.1.3.tgz#9cdf11f723b01d4fe0656bb57a97003c5732bf66"
-  integrity sha512-ZH+0WFdLAhnwLIm4ocorxfzdE939Iv1s0WHnI6lqjmsbOfdQBFiJx0+xCB02AN2F3nR6ApSFgaczXOxMmucuyQ==
+  version "7.1.7"
+  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-7.1.7.tgz#4368816df8457bca867d0ee05658ed81cf9ad91d"
+  integrity sha512-k9zN1Tvs+tFnNb138iO7P0djjM0o3V+lKmCkZvlI/FQrFrE9RVCj91e1v823aTIsPdtc4PYMK9GLeSj2m7NnLw==
   dependencies:
     "@jsii/spec" "^1.75.0"
     case "^1.6.3"
