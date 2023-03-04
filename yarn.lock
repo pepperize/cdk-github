@@ -3979,9 +3979,9 @@ jsii-diff@^1.70.0:
     yargs "^16.2.0"
 
 jsii-docgen@^7.0.126:
-  version "7.1.10"
-  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-7.1.10.tgz#73dbc9621496074748b2294e61391ee50eb8a27f"
-  integrity sha512-MGXxrunp9K2FDdUgXXluAKHAOxzcJS2xqxHJEyZnDP7innK/3dSHHJwDpVJsqtM/rhSCsDAcHnhIZbFtLdnW+A==
+  version "7.1.14"
+  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-7.1.14.tgz#71c225cc41f224b30eb9bcaea1fc1acb25deecdc"
+  integrity sha512-Ji1Dji9VxdFMj/VE2ZPL4O+T/qK2vb0s3IdvWLRejNTEbVJBS2id2IRf33X3cpMB4u2DMnS82ft2aR6/U6K//Q==
   dependencies:
     "@jsii/spec" "^1.76.0"
     case "^1.6.3"
