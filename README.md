@@ -206,6 +206,8 @@ const authOptions = AuthOptions.unauthenticated();
 
 ## Manage a GitHub Repository - Example
 
+[![Manage a GitHub Repository as custom CFN resource](https://raw.githubusercontent.com/pepperize/cdk-github/main/cloudformation-stack-github-custom-resource.png)](https://github.com/pepperize/cdk-github/blob/main/src/integ.default.ts)
+
 [@octokit/plugin-rest-endpoint-methods](https://github.com/octokit/plugin-rest-endpoint-methods.js/#usage)
 
 ```typescript
