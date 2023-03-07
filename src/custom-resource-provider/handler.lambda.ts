@@ -5,18 +5,14 @@ import { createUnauthenticatedAuth } from "@octokit/auth-unauthenticated";
 import { OctokitOptions } from "@octokit/core/dist-types/types";
 import { RequestError } from "@octokit/request-error";
 import { Octokit } from "@octokit/rest";
-import {
-  OnEventHandler,
-  OnEventRequest,
-  OnEventResponse,
-} from "aws-cdk-lib/custom-resources/lib/provider-framework/types"; // eslint-disable-line import/no-unresolved
+import { CdkCustomResourceEvent as OnEventRequest, CdkCustomResourceResponse as OnEventResponse } from "aws-lambda";
 import { SSM } from "aws-sdk";
 import { executeGithubApiCall } from "./execute-github-api-call";
 import { getSecretValue } from "./get-secret-value";
 import { Auth, AuthenticationStrategy } from "../auth";
 import { GithubApiCall } from "../github-custom-resource";
 
-export const handler: OnEventHandler = async (event: OnEventRequest): Promise<OnEventResponse | undefined> => {
+export const handler = async (event: OnEventRequest): Promise<OnEventResponse | undefined> => {
   console.log(`Request of type ${event.RequestType} received`);
 
   console.log("Payload: %j", event);
