@@ -957,9 +957,9 @@
   integrity sha512-T8TbSnGsxo6TDBJx/Sgv/BlVJL3tshxZP7Aq5R1mSnM5OcHY2dQaxLMu2+E8u3gN0MLOzdjurqN4ZRVuzQycOQ==
 
 "@pepperize/projen-awscdk-construct@latest":
-  version "0.0.462"
-  resolved "https://registry.yarnpkg.com/@pepperize/projen-awscdk-construct/-/projen-awscdk-construct-0.0.462.tgz#8cd571f9c5dd431da437d428acdb0c66bcf4c33d"
-  integrity sha512-5RtRRKsPXhhtp4iKdAvRuxOW2tbGrnU3Z7dyAlPA70CBoBXHPclYivYukA00zvhvk1Yz3dIliWM6q8IoL0Jzyw==
+  version "0.0.466"
+  resolved "https://registry.yarnpkg.com/@pepperize/projen-awscdk-construct/-/projen-awscdk-construct-0.0.466.tgz#43cb27940b5d0b0735b5baf046dd700099135d45"
+  integrity sha512-loYxQdzGXbK/8Jkq8V+4ucFUNf0vAP+mi3pmDTBg5kHqStRZzmwi+YFTCNZe+hMpwemlbLSX2zBFGqH8QVHkqA==
 
 "@pkgr/utils@^2.3.1":
   version "2.3.1"
