@@ -957,9 +957,9 @@
   integrity sha512-T8TbSnGsxo6TDBJx/Sgv/BlVJL3tshxZP7Aq5R1mSnM5OcHY2dQaxLMu2+E8u3gN0MLOzdjurqN4ZRVuzQycOQ==
 
 "@pepperize/projen-awscdk-construct@latest":
-  version "0.0.466"
-  resolved "https://registry.yarnpkg.com/@pepperize/projen-awscdk-construct/-/projen-awscdk-construct-0.0.466.tgz#43cb27940b5d0b0735b5baf046dd700099135d45"
-  integrity sha512-loYxQdzGXbK/8Jkq8V+4ucFUNf0vAP+mi3pmDTBg5kHqStRZzmwi+YFTCNZe+hMpwemlbLSX2zBFGqH8QVHkqA==
+  version "0.0.467"
+  resolved "https://registry.yarnpkg.com/@pepperize/projen-awscdk-construct/-/projen-awscdk-construct-0.0.467.tgz#0b826abe5d617a1efd2674806a0ebca3174fdd04"
+  integrity sha512-cH1oafyuksP654Uk6Jc2Pb/RjFm59GTlfUJpHxwGSVy+IVhGxzOeYnXoxemDCXR+YaRmf1fjcGEuXetpxS4koA==
 
 "@pkgr/utils@^2.3.1":
   version "2.3.1"
@@ -1013,9 +1013,9 @@
   integrity sha512-yOlFc+7UtL/89t2ZhjPvvB/DeAr3r+Dq58IgzsFkOAvVC6NMJXmCGjbptdXdR9qsX7pKcTL+s87FtYREi2dEEQ==
 
 "@types/aws-lambda@^8.10.111":
-  version "8.10.112"
-  resolved "https://registry.yarnpkg.com/@types/aws-lambda/-/aws-lambda-8.10.112.tgz#87bb324373ce0a8fd23ea4db44f9a80322f37ac1"
-  integrity sha512-1auQeFhclqU93Tb5kzk/0KaMIqkehwQpYz9a1H8AFZl7quihPh0mJTqNrxJIzIFM6R7rmUNDIU5hdBB9iDES6A==
+  version "8.10.113"
+  resolved "https://registry.yarnpkg.com/@types/aws-lambda/-/aws-lambda-8.10.113.tgz#5c8434049c5944ab80ae5ff76e74b270a4795024"
+  integrity sha512-JHxKRi7Nz2Bjqp0CKllm9Fl5GZwRfMF+lilSfl12ATyvBx0cRM09ztBVgebeJ8wrjJggHxxjSU2/U+SvSG+K1A==
 
 "@types/babel__core@^7.0.0", "@types/babel__core@^7.1.14":
   version "7.20.0"
@@ -1491,9 +1491,9 @@ aws-lambda@^1.0.7:
     watchpack "^2.0.0-beta.10"
 
 aws-sdk@^2.1329.0, aws-sdk@^2.814.0:
-  version "2.1335.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1335.0.tgz#58636e7fe4099ce17b05b7a5c6344ea3a32159b7"
-  integrity sha512-cuX3OA9awP1rFEuemqNGF5278u4auFx7aS+C69d+QIwfH6cHE+hLxk660ypTIlionE40nGyYEjLhj6dZeHdWNw==
+  version "2.1336.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1336.0.tgz#105527471320a9183e03d5fb42cc6fa2d1e270ec"
+  integrity sha512-DmnuMr1tK30At8n4gAHohb3nP/qCgUNjTrgZSl1+6gK8U5Yt6qPSqHM3ieWTm6VMSQTRp9aaR91l6soznnuxuA==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
@@ -3948,9 +3948,9 @@ jsii-diff@^1.77.0:
     yargs "^16.2.0"
 
 jsii-docgen@^7.1.18:
-  version "7.1.25"
-  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-7.1.25.tgz#0028bd7a1b7a462f3b77d481e301c954c2722601"
-  integrity sha512-Esrmx9Byw0nPsxB5kCP21V+9+P+K5eIf9S4JIs8jaCtive7xHCrrrvcPokztUWQpVPpHQHyo5uD9S8bHKIfYpQ==
+  version "7.1.26"
+  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-7.1.26.tgz#8a8db4c74d1788971327b593a4a6c8216da9c9b4"
+  integrity sha512-fIdDWxKtN/TVyvl1xUcI/iDHhkkn0M1kMOYIOmjX2FSYT1tLCtFfPfarKQM6HMtGlU9CvGfl7C075b62IfGmHw==
   dependencies:
     "@jsii/spec" "^1.77.0"
     case "^1.6.3"
