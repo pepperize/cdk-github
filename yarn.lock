@@ -972,9 +972,9 @@
   integrity sha512-T8TbSnGsxo6TDBJx/Sgv/BlVJL3tshxZP7Aq5R1mSnM5OcHY2dQaxLMu2+E8u3gN0MLOzdjurqN4ZRVuzQycOQ==
 
 "@pepperize/projen-awscdk-construct@latest":
-  version "0.0.501"
-  resolved "https://registry.yarnpkg.com/@pepperize/projen-awscdk-construct/-/projen-awscdk-construct-0.0.501.tgz#0e2776efd6ca99a55bc5b084f161ac7c2a71fe1a"
-  integrity sha512-SDj+Gn1GX5ZfwrFMwEKnv3kpvkX042EVUxywlW4rGALsW+ybF5gn4G7gGhbb8uSNsrXQKt77MdYo4ymmN8tfGA==
+  version "0.0.504"
+  resolved "https://registry.yarnpkg.com/@pepperize/projen-awscdk-construct/-/projen-awscdk-construct-0.0.504.tgz#4ff6722511cf8fa58772551eb18ef457c117d1ae"
+  integrity sha512-VNBIue6r5ohJBIH2FBq+mppVejnTdbwEdrcyRpUlTl+akC2IqL91JJeF9X546EB6F1F6yE2Ph5FHe1BjuHrUcg==
 
 "@pkgr/utils@^2.3.1":
   version "2.3.1"
@@ -1506,9 +1506,9 @@ aws-lambda@^1.0.7:
     watchpack "^2.0.0-beta.10"
 
 aws-sdk@^2.1329.0, aws-sdk@^2.814.0:
-  version "2.1350.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1350.0.tgz#e538768b842a345db63f2cd0dfa8c7c60e0d8e78"
-  integrity sha512-b0BHug2iCtIsKgstj3FEyZYZCv8RZnie5vUQzkw0rr581Z6DOcJof7gGn19E6mPQp1l4j0d274SjvdFQS4JCMw==
+  version "2.1351.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1351.0.tgz#d691555150791b0957c4b9715cd15a901a86e013"
+  integrity sha512-/Hj9lmxFO2eBipUGY2CL5rNhoZO4PrXOYQ6C+nQ0ffzp+bmYc0nzKwO7xrGreVIefrVbbikQyItiDL3PmBRnGw==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
@@ -2421,12 +2421,13 @@ eslint-import-resolver-node@^0.3.7:
     resolve "^1.22.1"
 
 eslint-import-resolver-typescript@^3.5.3:
-  version "3.5.4"
-  resolved "https://registry.yarnpkg.com/eslint-import-resolver-typescript/-/eslint-import-resolver-typescript-3.5.4.tgz#7370c326c3c08f0c1839c592d79d20b704de15d4"
-  integrity sha512-9xUpnedEmSfG57sN1UvWPiEhfJ8bPt0Wg2XysA7Mlc79iFGhmJtRUg9LxtkK81FhMUui0YuR2E8iUsVhePkh4A==
+  version "3.5.5"
+  resolved "https://registry.yarnpkg.com/eslint-import-resolver-typescript/-/eslint-import-resolver-typescript-3.5.5.tgz#0a9034ae7ed94b254a360fbea89187b60ea7456d"
+  integrity sha512-TdJqPHs2lW5J9Zpe17DZNQuDnox4xo2o+0tE7Pggain9Rbc19ik8kFtXdxZ250FVx2kF4vlt2RSf4qlUpG7bhw==
   dependencies:
     debug "^4.3.4"
     enhanced-resolve "^5.12.0"
+    eslint-module-utils "^2.7.4"
     get-tsconfig "^4.5.0"
     globby "^13.1.3"
     is-core-module "^2.11.0"
