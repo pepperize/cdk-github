@@ -752,18 +752,17 @@
     fastq "^1.6.0"
 
 "@octokit/auth-app@^4.0.9":
-  version "4.0.11"
-  resolved "https://registry.yarnpkg.com/@octokit/auth-app/-/auth-app-4.0.11.tgz#a64783d5bc26bdd5f4fed026c2087180d5f0b0d3"
-  integrity sha512-qeedRfh09Rdr+I9/xUCeaKIEICEunK+86vprvSZdIDitban+zrI1w4oBvR3mD8OkNP+t8rVMQvCzl4g93aKQlA==
+  version "4.0.12"
+  resolved "https://registry.yarnpkg.com/@octokit/auth-app/-/auth-app-4.0.12.tgz#3e219af1ea644df29e4df0986c2e84f383a6e551"
+  integrity sha512-4iwQ+UrmJDW4AOJwaTmptuCa0bXTKrVaaZL7KirUq5MKLWq+xcSr7e8Ha8Kf7Cq8CXVpt+W5i3kNVS6N8R2sUA==
   dependencies:
     "@octokit/auth-oauth-app" "^5.0.0"
     "@octokit/auth-oauth-user" "^2.0.0"
     "@octokit/request" "^6.0.0"
     "@octokit/request-error" "^3.0.0"
     "@octokit/types" "^9.0.0"
-    "@types/lru-cache" "^5.1.0"
     deprecation "^2.3.1"
-    lru-cache "^6.0.0"
+    lru-cache "^9.0.0"
     universal-github-app-jwt "^1.1.1"
     universal-user-agent "^6.0.0"
 
@@ -1118,11 +1117,6 @@
   version "0.7.10"
   resolved "https://registry.yarnpkg.com/@types/libsodium-wrappers/-/libsodium-wrappers-0.7.10.tgz#a6ebde70d3b4af960fd802af8d0e3c7cfe281eb2"
   integrity sha512-BqI9B92u+cM3ccp8mpHf+HzJ8fBlRwdmyd6+fz3p99m3V6ifT5O3zmOMi612PGkpeFeG/G6loxUnzlDNhfjPSA==
-
-"@types/lru-cache@^5.1.0":
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/@types/lru-cache/-/lru-cache-5.1.1.tgz#c48c2e27b65d2a153b19bfc1a317e30872e01eef"
-  integrity sha512-ssE3Vlrys7sdIzs5LOxCzTVMsU7i9oa/IaW92wF32JFb3CVczqOkru2xspuKczHEbG3nvmPY7IFqVmGGHdNbYw==
 
 "@types/minimatch@^5.1.2":
   version "5.1.2"
@@ -4258,6 +4252,11 @@ lru-cache@^6.0.0:
   integrity sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==
   dependencies:
     yallist "^4.0.0"
+
+lru-cache@^9.0.0:
+  version "9.1.1"
+  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-9.1.1.tgz#c58a93de58630b688de39ad04ef02ef26f1902f1"
+  integrity sha512-65/Jky17UwSb0BuB9V+MyDpsOtXKmYwzhyl+cOa9XUiI4uV2Ouy/2voFP3+al0BjZbJgMBD8FojMpAf+Z+qn4A==
 
 make-dir@^3.0.0:
   version "3.1.0"
