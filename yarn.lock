@@ -752,9 +752,9 @@
     fastq "^1.6.0"
 
 "@octokit/auth-app@^4.0.9":
-  version "4.0.12"
-  resolved "https://registry.yarnpkg.com/@octokit/auth-app/-/auth-app-4.0.12.tgz#3e219af1ea644df29e4df0986c2e84f383a6e551"
-  integrity sha512-4iwQ+UrmJDW4AOJwaTmptuCa0bXTKrVaaZL7KirUq5MKLWq+xcSr7e8Ha8Kf7Cq8CXVpt+W5i3kNVS6N8R2sUA==
+  version "4.0.13"
+  resolved "https://registry.yarnpkg.com/@octokit/auth-app/-/auth-app-4.0.13.tgz#53323bee6bfefbb73ea544dd8e6a0144550e13e3"
+  integrity sha512-NBQkmR/Zsc+8fWcVIFrwDgNXS7f4XDrkd9LHdi9DPQw1NdGHLviLzRO2ZBwTtepnwHXW5VTrVU9eFGijMUqllg==
   dependencies:
     "@octokit/auth-oauth-app" "^5.0.0"
     "@octokit/auth-oauth-user" "^2.0.0"
