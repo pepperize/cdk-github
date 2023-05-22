@@ -809,9 +809,9 @@
     "@octokit/types" "^9.0.0"
 
 "@octokit/auth-unauthenticated@^3.0.4":
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/@octokit/auth-unauthenticated/-/auth-unauthenticated-3.0.4.tgz#347d3f3a6fefb22d399a941b986bac5361fc95df"
-  integrity sha512-AT74XGBylcLr4lmUp1s6mjSUgphGdlse21Qjtv5DzpX1YOl5FXKwvNcZWESdhyBbpDT8VkVyLFqa/7a7eqpPNw==
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/@octokit/auth-unauthenticated/-/auth-unauthenticated-3.0.5.tgz#a562bffd6ca0d0e80541eaf9f9b89b8d53020228"
+  integrity sha512-yH2GPFcjrTvDWPwJWWCh0tPPtTL5SMgivgKPA+6v/XmYN6hGQkAto8JtZibSKOpf8ipmeYhLNWQ2UgW0GYILCw==
   dependencies:
     "@octokit/request-error" "^3.0.0"
     "@octokit/types" "^9.0.0"
