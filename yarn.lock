@@ -980,9 +980,9 @@
   integrity sha512-T8TbSnGsxo6TDBJx/Sgv/BlVJL3tshxZP7Aq5R1mSnM5OcHY2dQaxLMu2+E8u3gN0MLOzdjurqN4ZRVuzQycOQ==
 
 "@pepperize/projen-awscdk-construct@latest":
-  version "0.0.573"
-  resolved "https://registry.yarnpkg.com/@pepperize/projen-awscdk-construct/-/projen-awscdk-construct-0.0.573.tgz#c2ad915588b8f4476554238bedd823ee5b2836e7"
-  integrity sha512-9/K9HCI3Aq+KeAjtE64I2E7497jwX59h2MYawJPNgJ/UnV4NTUEgCI4xcM/F+k2Ah5TM7K9EyogusSaKxpZf7A==
+  version "0.0.576"
+  resolved "https://registry.yarnpkg.com/@pepperize/projen-awscdk-construct/-/projen-awscdk-construct-0.0.576.tgz#3f7611607ed1c28939ebfc95fa00a4ade7448bae"
+  integrity sha512-4n3f1Dfnvf747DK1lBXD6c1P52+Zw2nXvnr844y9zro0o3A9fEYRdSsBqm3YdB0heUsb3P5k7PRQxCqDyt0YiQ==
 
 "@pkgr/utils@^2.3.1":
   version "2.3.1"
@@ -5208,13 +5208,6 @@ semver@^6.0.0, semver@^6.3.0, semver@^6.3.1:
   version "6.3.1"
   resolved "https://registry.yarnpkg.com/semver/-/semver-6.3.1.tgz#556d2ef8689146e46dcea4bfdd095f3434dffcb4"
   integrity sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==
-
-semver@^7.5.4:
-  version "7.5.4"
-  resolved "https://registry.yarnpkg.com/semver/-/semver-7.5.4.tgz#483986ec4ed38e1c6c48c34894a9182dbff68a6e"
-  integrity sha512-1bCSESV6Pv+i21Hvpxp3Dx+pSD8lIPt8uVjRrxAUt/nbswYc+tK6Y2btiULjd4+fnq15PX+nqQDC7Oft7WkwcA==
-  dependencies:
-    lru-cache "^6.0.0"
 
 shebang-command@^2.0.0:
   version "2.0.0"
