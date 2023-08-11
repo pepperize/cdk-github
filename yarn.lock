@@ -4098,12 +4098,12 @@ jsii@1.85.0:
     yargs "^16.2.0"
 
 jsii@^1.77.0:
-  version "1.86.1"
-  resolved "https://registry.yarnpkg.com/jsii/-/jsii-1.86.1.tgz#ba5f7d2d948b02c4efa2543260e1eb9e108bf436"
-  integrity sha512-gAi/mGRdIpCYY7Na61VPE717Z6+/1HTYqgxjMC+VdLXxITbWpaQqO+DqsOnhtsIh+JyjIQM7VOSZ+5Ymf1A74A==
+  version "1.87.0"
+  resolved "https://registry.yarnpkg.com/jsii/-/jsii-1.87.0.tgz#a57c6b286a82ca032bf4d3ff48d92c0161a8666c"
+  integrity sha512-yMb64s0L4Teu8wbuL7ixhLlqcbiLaPUHUiLCloSvfGfbFikayPQOTGUkIri3tZnAE26XskmgbZsStlc2tRfjBg==
   dependencies:
-    "@jsii/check-node" "1.86.1"
-    "@jsii/spec" "^1.86.1"
+    "@jsii/check-node" "1.87.0"
+    "@jsii/spec" "^1.87.0"
     case "^1.6.3"
     chalk "^4"
     fast-deep-equal "^3.1.3"
