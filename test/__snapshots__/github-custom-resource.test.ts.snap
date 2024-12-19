@@ -39,7 +39,7 @@ Object {
           "S3Bucket": Object {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": "82e23dae2288817b47632c89c0afb36938819432e9b2a8e351fc68492d2dd632.zip",
+          "S3Key": "c6128225974052115f6c1736b6aa781f60f53298df754b227c272f746d42b62e.zip",
         },
         "Description": "src/custom-resource-provider/handler.lambda.ts",
         "Environment": Object {
@@ -54,7 +54,7 @@ Object {
             "Arn",
           ],
         },
-        "Runtime": "nodejs16.x",
+        "Runtime": "nodejs22.x",
         "Timeout": 600,
       },
       "Type": "AWS::Lambda::Function",

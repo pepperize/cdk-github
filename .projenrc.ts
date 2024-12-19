@@ -75,7 +75,7 @@ const project = new AwsCdkConstructLibrary({
   gitignore: ["cdk.out"],
 
   lambdaOptions: {
-    runtime: awscdk.LambdaRuntime.NODEJS_16_X,
+    runtime: awscdk.LambdaRuntime.NODEJS_22_X,
   },
 });
 
