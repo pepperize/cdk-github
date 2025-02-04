@@ -39,7 +39,7 @@ Object {
           "S3Bucket": Object {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": "8afec40177f74fa1c36c64031b7169e109496d9034f7182f438bcca1323208a0.zip",
+          "S3Key": "ee71da0ba18101f457da850cc04b76e17e13bc81245d80b847188b6c0c1d6531.zip",
         },
         "Description": "src/custom-resource-provider/handler.lambda.ts",
         "Environment": Object {
