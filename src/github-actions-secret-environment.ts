@@ -78,7 +78,7 @@ export class GithubActionsSecretEnvironment extends GithubCustomResourceBase {
       props.removalPolicy == RemovalPolicy.DESTROY
         ? {
             endpoint: "actions",
-            method: "deleteOrgSecret", // https://github.com/octokit/plugin-rest-endpoint-methods.js/blob/main/docs/actions/deleteEnvironmentSecret.md
+            method: "deleteEnvironmentSecret", // https://github.com/octokit/plugin-rest-endpoint-methods.js/blob/main/docs/actions/deleteEnvironmentSecret.md
             parameters: {
               repository_id: props.repositoryId,
               environment_name: props.environmentName,
@@ -90,7 +90,7 @@ export class GithubActionsSecretEnvironment extends GithubCustomResourceBase {
 
     this._resource = new CustomResource(this, "Resource", {
       serviceToken: provider.serviceToken,
-      resourceType: "Custom::GithubActions::EnvironmentSecret",
+      resourceType: "Custom::GithubActionsEnvironmentSecret",
       properties: {
         Create: Lazy.uncachedString({ produce: () => Stack.of(this).toJsonString(onCreate) }),
         Update: Lazy.uncachedString({ produce: () => Stack.of(this).toJsonString(onCreate) }),
