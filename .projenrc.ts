@@ -4,7 +4,8 @@ import { javascript, awscdk } from "projen";
 const project = new AwsCdkConstructLibrary({
   author: "Patrick Florek",
   authorAddress: "patrick.florek@gmail.com",
-  cdkVersion: "2.48.0",
+  cdkVersion: "2.278.0",
+  jsiiVersion: "~6.0.0",
   defaultReleaseBranch: "main",
   name: "cdk-github",
   description:
@@ -29,17 +30,25 @@ const project = new AwsCdkConstructLibrary({
   repositoryUrl: "https://github.com/pepperize/cdk-github.git",
 
   projenrcTs: true,
+  minNodeVersion: "22.13.0",
+  workflowNodeVersion: "24.x",
+  jestOptions: {
+    jestVersion: "^30",
+  },
+  packageManager: javascript.NodePackageManager.YARN_CLASSIC,
 
   devDeps: [
     "@aws-sdk/util-arn-parser",
-    "@octokit/auth-app",
-    "@octokit/auth-token",
-    "@octokit/auth-unauthenticated",
-    "@octokit/core",
-    "@octokit/rest",
-    "@octokit/request-error",
-    "@octokit/types",
-    "@pepperize/projen-awscdk-construct@latest",
+    "@octokit/auth-app@^4",
+    "@octokit/auth-token@^3",
+    "@octokit/auth-unauthenticated@^3",
+    "@octokit/core@^4",
+    "@octokit/rest@^19",
+    "@octokit/request-error@^3",
+    "@octokit/types@^9",
+    "@pepperize/projen-awscdk-construct@~0.1.1",
+    "@types/node@^22",
+    "typescript@~6.0",
     "@types/aws-lambda",
     "@types/libsodium-wrappers",
     "aws-lambda",
@@ -64,7 +73,6 @@ const project = new AwsCdkConstructLibrary({
     module: "pepperize_cdk_github",
   },
   publishToMaven: {
-    mavenEndpoint: "https://s01.oss.sonatype.org",
     mavenGroupId: "com.pepperize",
     mavenArtifactId: "cdk-github",
     javaPackage: "com.pepperize.cdk.github",
@@ -75,7 +83,7 @@ const project = new AwsCdkConstructLibrary({
   gitignore: ["cdk.out"],
 
   lambdaOptions: {
-    runtime: awscdk.LambdaRuntime.NODEJS_22_X,
+    runtime: awscdk.LambdaRuntime.NODEJS_26_X,
   },
 });
 

@@ -10,7 +10,7 @@ describe("GithubActionsSecret", () => {
     const secret = secretsmanager.Secret.fromSecretCompleteArn(
       stack,
       "Secret",
-      "arn:aws:secretsmanager:us-east-1:123456789012:secret:AnySecret-Random"
+      "arn:aws:secretsmanager:us-east-1:123456789012:secret:AnySecret-Random",
     );
     const actionsSecrets = GithubActionsSecret.fromSecretsManager(secret, "any-field");
 
@@ -28,7 +28,7 @@ describe("GithubActionsSecret", () => {
     const secret = secretsmanager.Secret.fromSecretCompleteArn(
       stack,
       "Secret",
-      "arn:aws:secretsmanager:us-east-1:123456789012:secret:AnySecret-Random"
+      "arn:aws:secretsmanager:us-east-1:123456789012:secret:AnySecret-Random",
     );
     const actionsSecrets = GithubActionsSecret.fromSecretsManager(secret, "any-field");
 
