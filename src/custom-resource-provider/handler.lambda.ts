@@ -17,7 +17,10 @@ export const handler = async (event: OnEventRequest): Promise<OnEventResponse | 
 
   console.log("Payload: %j", event);
 
-  const call: GithubApiCall | undefined = parse(event.ResourceProperties[event.RequestType]);
+  const call: GithubApiCall | undefined = parse(
+    event.ResourceProperties[event.RequestType],
+    "PhysicalResourceId" in event ? event.PhysicalResourceId : undefined,
+  );
 
   if (!call) {
     return;
@@ -76,12 +79,22 @@ export const handler = async (event: OnEventRequest): Promise<OnEventResponse | 
 };
 
 /**
+ * @see https://github.com/aws/aws-cdk/blob/main/packages/aws-cdk-lib/custom-resources/lib/aws-custom-resource/runtime/shared.ts
+ */
+const PHYSICAL_RESOURCE_ID_REFERENCE = "PHYSICAL:RESOURCEID:";
+
+/**
  * Parse the GitHub API call passed in ResourceProperties OnCreate, OnUpdate and OnDelete
  *
  * @internal
  */
-const parse = (stringified?: string): GithubApiCall | undefined => {
-  return stringified ? JSON.parse(stringified) : undefined;
+export const parse = (stringified?: string, physicalResourceId?: string): GithubApiCall | undefined => {
+  if (!stringified) {
+    return undefined;
+  }
+  return JSON.parse(stringified, (_key, value) =>
+    PHYSICAL_RESOURCE_ID_REFERENCE === value && physicalResourceId ? physicalResourceId : value,
+  );
 };
 
 /**
