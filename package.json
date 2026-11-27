@@ -49,7 +49,7 @@
     "@octokit/request-error": "^3",
     "@octokit/rest": "^19",
     "@octokit/types": "^9",
-    "@pepperize/projen-awscdk-construct": "~0.1.1",
+    "@pepperize/projen-awscdk-construct": "~0.1.2",
     "@types/aws-lambda": "^8.10.164",
     "@types/jest": "^30",
     "@types/libsodium-wrappers": "^0.7.10",
