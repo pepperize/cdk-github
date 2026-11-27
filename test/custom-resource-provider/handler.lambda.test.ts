@@ -1,6 +1,32 @@
-import { filter, flatten } from "../../src/custom-resource-provider/handler.lambda";
+import { filter, flatten, parse } from "../../src/custom-resource-provider/handler.lambda";
 
 describe("handler", () => {
+  describe("parse", () => {
+    it("Should replace the physical resource id reference", () => {
+      // Given
+      const call = JSON.stringify({
+        endpoint: "repos",
+        method: "update",
+        parameters: { owner: "pepperize", repo: "PHYSICAL:RESOURCEID:" },
+      });
+
+      // When
+      const result = parse(call, "cdk-github");
+
+      // Then
+      expect(result?.parameters).toEqual({ owner: "pepperize", repo: "cdk-github" });
+    });
+    it("Should keep the physical resource id reference without a physical resource id", () => {
+      // Given
+      const call = JSON.stringify({ endpoint: "repos", method: "get", parameters: { repo: "PHYSICAL:RESOURCEID:" } });
+
+      // When
+      const result = parse(call, undefined);
+
+      // Then
+      expect(result?.parameters).toEqual({ repo: "PHYSICAL:RESOURCEID:" });
+    });
+  });
   describe("filter", () => {
     it("Should filter single object key", () => {
       // When

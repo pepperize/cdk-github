@@ -39,7 +39,7 @@ exports[`GithubCustomResource Should match snapshot 1`] = `
           "S3Bucket": {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": "4c630c0046183c5fdb3559db8d437ca2451a7ebb67e241bd6f160b95dda51bbe.zip",
+          "S3Key": "7378a0c80cd9353b3fe160f044fffa621deb706c9781a07a2b15951e899ef5dd.zip",
         },
         "Description": "src/custom-resource-provider/handler.lambda.ts",
         "Environment": {

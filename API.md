@@ -521,6 +521,8 @@ public readonly parameters: any;
 
 The parameters for the service action.
 
+Use `new custom_resources.PhysicalResourceIdReference()` to pass the current physical resource id in `onUpdate` or `onDelete`.
+
 > [https://github.com/octokit/rest.js](https://github.com/octokit/rest.js)
 
 ---

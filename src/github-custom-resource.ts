@@ -20,6 +20,8 @@ export interface GithubApiCall {
   /**
    * The parameters for the service action.
    *
+   * Use `new custom_resources.PhysicalResourceIdReference()` to pass the current physical resource id in `onUpdate` or `onDelete`.
+   *
    * @see https://github.com/octokit/rest.js
    */
   readonly parameters?: any;
