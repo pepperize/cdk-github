@@ -7,7 +7,7 @@ import { GithubApiCall } from "../github-custom-resource";
 
 export const executeGithubApiCall = async (
   octokit: Octokit,
-  call: GithubApiCall
+  call: GithubApiCall,
 ): Promise<OctokitResponse<{ [key: string]: unknown }>> => {
   switch (`${call.endpoint}.${call.method}`) {
     // Handles the create or update of actions secrets. Retrieves and encrypts the SecretsManager Secret.
@@ -29,7 +29,7 @@ export const executeGithubApiCall = async (
  */
 export const createOrUpdateEnvironmentSecretParameter = async (
   octokit: Octokit,
-  parameters: RestEndpointMethodTypes["actions"]["createOrUpdateEnvironmentSecret"]["parameters"]
+  parameters: RestEndpointMethodTypes["actions"]["createOrUpdateEnvironmentSecret"]["parameters"],
 ): Promise<RestEndpointMethodTypes["actions"]["createOrUpdateEnvironmentSecret"]["response"]> => {
   const {
     data: { key_id, key },
@@ -55,7 +55,7 @@ export const createOrUpdateEnvironmentSecretParameter = async (
  */
 export const createOrUpdateOrgSecretParameter = async (
   octokit: Octokit,
-  parameters: RestEndpointMethodTypes["actions"]["createOrUpdateOrgSecret"]["parameters"]
+  parameters: RestEndpointMethodTypes["actions"]["createOrUpdateOrgSecret"]["parameters"],
 ): Promise<RestEndpointMethodTypes["actions"]["createOrUpdateOrgSecret"]["response"]> => {
   const {
     data: { key_id, key },
@@ -80,7 +80,7 @@ export const createOrUpdateOrgSecretParameter = async (
  */
 export const createOrUpdateRepoSecretParameter = async (
   octokit: Octokit,
-  parameters: RestEndpointMethodTypes["actions"]["createOrUpdateRepoSecret"]["parameters"]
+  parameters: RestEndpointMethodTypes["actions"]["createOrUpdateRepoSecret"]["parameters"],
 ): Promise<RestEndpointMethodTypes["actions"]["createOrUpdateRepoSecret"]["response"]> => {
   const {
     data: { key_id, key },

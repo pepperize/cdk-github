@@ -36,6 +36,21 @@ describe("GithubCustomResource", () => {
       },
     });
   });
+
+  it("Should run the on event handler on nodejs26.x", () => {
+    // Given
+    const app = new App();
+    const stack = new GithubCustomResourceTestStack(app, "GithubTestStack");
+
+    // When
+    const template = Template.fromStack(stack);
+
+    // Then
+    template.hasResourceProperties("AWS::Lambda::Function", {
+      Description: "src/custom-resource-provider/handler.lambda.ts",
+      Runtime: "nodejs26.x",
+    });
+  });
 });
 
 class GithubCustomResourceTestStack extends Stack {

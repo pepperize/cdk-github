@@ -94,7 +94,7 @@ export const flatten = (object: object): { [key: string]: any } => {
     if ("object" == typeof child && null != child) {
       return Object.entries(child).reduce(
         (result, [key, value]) => Object.assign(result, _flatten(path.concat([key]), value)),
-        {}
+        {},
       );
     }
     return { [path.join(".")]: child };

@@ -1,4 +1,4 @@
-import { captureStackTrace, IResolvable, IResolveContext } from "aws-cdk-lib";
+import { IResolvable, IResolveContext } from "aws-cdk-lib";
 import * as iam from "aws-cdk-lib/aws-iam";
 import * as secretsmanager from "aws-cdk-lib/aws-secretsmanager";
 import { ISecret } from "aws-cdk-lib/aws-secretsmanager";
@@ -8,7 +8,7 @@ export class GithubActionsSecret implements IResolvable {
     return new GithubActionsSecret(secret, field);
   }
 
-  public readonly creationStack: string[] = captureStackTrace();
+  public readonly creationStack: string[] = [];
 
   private readonly secret: secretsmanager.ISecret;
 

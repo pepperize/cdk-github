@@ -6,35 +6,42 @@
     },
     {
       "name": "@octokit/auth-app",
+      "version": "^4",
       "type": "build"
     },
     {
       "name": "@octokit/auth-token",
+      "version": "^3",
       "type": "build"
     },
     {
       "name": "@octokit/auth-unauthenticated",
+      "version": "^3",
       "type": "build"
     },
     {
       "name": "@octokit/core",
+      "version": "^4",
       "type": "build"
     },
     {
       "name": "@octokit/request-error",
+      "version": "^3",
       "type": "build"
     },
     {
       "name": "@octokit/rest",
+      "version": "^19",
       "type": "build"
     },
     {
       "name": "@octokit/types",
+      "version": "^9",
       "type": "build"
     },
     {
       "name": "@pepperize/projen-awscdk-construct",
-      "version": "latest",
+      "version": "~0.1.1",
       "type": "build"
     },
     {
@@ -43,6 +50,7 @@
     },
     {
       "name": "@types/jest",
+      "version": "^30",
       "type": "build"
     },
     {
@@ -51,6 +59,7 @@
     },
     {
       "name": "@types/node",
+      "version": "^22",
       "type": "build"
     },
     {
@@ -73,7 +82,7 @@
     },
     {
       "name": "commit-and-tag-version",
-      "version": "^12",
+      "version": "^13",
       "type": "build"
     },
     {
@@ -102,12 +111,13 @@
       "type": "build"
     },
     {
-      "name": "jest",
+      "name": "jest-junit",
+      "version": "^17",
       "type": "build"
     },
     {
-      "name": "jest-junit",
-      "version": "^15",
+      "name": "jest",
+      "version": "^30",
       "type": "build"
     },
     {
@@ -125,12 +135,12 @@
     },
     {
       "name": "jsii-rosetta",
-      "version": "~5.6.0",
+      "version": "~6.0.0",
       "type": "build"
     },
     {
       "name": "jsii",
-      "version": "~5.6.0",
+      "version": "~6.0.0",
       "type": "build"
     },
     {
@@ -151,6 +161,7 @@
     },
     {
       "name": "ts-jest",
+      "version": "^29",
       "type": "build"
     },
     {
@@ -163,17 +174,17 @@
     },
     {
       "name": "projen",
-      "version": "~0.91.1",
+      "version": "~0.105.12",
       "type": "devenv"
     },
     {
       "name": "aws-cdk-lib",
-      "version": "^2.48.0",
+      "version": "^2.278.0",
       "type": "peer"
     },
     {
       "name": "constructs",
-      "version": "^10.0.5",
+      "version": "^10.5.1",
       "type": "peer"
     }
   ],
