@@ -46,7 +46,7 @@ const project = new AwsCdkConstructLibrary({
     "@octokit/rest@^19",
     "@octokit/request-error@^3",
     "@octokit/types@^9",
-    "@pepperize/projen-awscdk-construct@~0.1.1",
+    "@pepperize/projen-awscdk-construct@~0.1.2",
     "@types/node@^22",
     "typescript@~6.0",
     "@types/aws-lambda",
