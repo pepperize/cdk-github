@@ -66,7 +66,7 @@ export class GithubActionsSecretRepository extends GithubCustomResourceBase {
       method: "createOrUpdateRepoSecret", // https://github.com/octokit/plugin-rest-endpoint-methods.js/blob/main/docs/actions/createOrUpdateRepoSecret.md
       parameters: {
         owner: props.owner,
-        repository_name: props.repositoryName,
+        repo: props.repositoryName,
         secret_name: props.secretName,
         value: props.source,
       },
@@ -78,10 +78,10 @@ export class GithubActionsSecretRepository extends GithubCustomResourceBase {
       props.removalPolicy == RemovalPolicy.DESTROY
         ? {
             endpoint: "actions",
-            method: "deleteOrgSecret", // https://github.com/octokit/plugin-rest-endpoint-methods.js/blob/main/docs/actions/deleteRepoSecret.md
+            method: "deleteRepoSecret", // https://github.com/octokit/plugin-rest-endpoint-methods.js/blob/main/docs/actions/deleteRepoSecret.md
             parameters: {
               owner: props.owner,
-              repository_name: props.repositoryName,
+              repo: props.repositoryName,
               secret_name: props.secretName,
             },
             outputPaths: [],
@@ -90,7 +90,7 @@ export class GithubActionsSecretRepository extends GithubCustomResourceBase {
 
     this._resource = new CustomResource(this, "Resource", {
       serviceToken: provider.serviceToken,
-      resourceType: "Custom::GithubActions::RepositorySecret",
+      resourceType: "Custom::GithubActionsRepositorySecret",
       properties: {
         Create: Lazy.uncachedString({ produce: () => Stack.of(this).toJsonString(onCreate) }),
         Update: Lazy.uncachedString({ produce: () => Stack.of(this).toJsonString(onCreate) }),

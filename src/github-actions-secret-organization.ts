@@ -95,7 +95,7 @@ export class GithubActionsSecretOrganization extends GithubCustomResourceBase {
 
     this._resource = new CustomResource(this, "Resource", {
       serviceToken: provider.serviceToken,
-      resourceType: "Custom::GithubActions::OrganizationSecret",
+      resourceType: "Custom::GithubActionsOrganizationSecret",
       properties: {
         Create: Lazy.uncachedString({ produce: () => Stack.of(this).toJsonString(onCreate) }),
         Update: Lazy.uncachedString({ produce: () => Stack.of(this).toJsonString(onCreate) }),
